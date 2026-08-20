@@ -39,8 +39,25 @@ match, but nothing can currently be written to fill one specifically.
 Preprocess does register every item script whose ItemType is `CONTAINER`, by bare name,
 which is the one registration path a mod can reach. So the fix is a generated script of
 minimal container items, one per missing id, 371 of them across every vehicle mod on the
-author's machine. They are marked `OBSOLETE`, which keeps them out of the item browser
+author's machine. They are marked `Hidden`, which keeps them out of the item browser
 and out of foraging, and none is in any loot table or recipe, so none can spawn.
+
+The generated file begins with `module` and carries no comments, which is not a style
+choice. `ScriptManager.CreateFromToken` locates a block with `indexOf("module")` on the
+raw token and reads the module name from there to the opening brace, so a header comment
+that merely contains the word steals the match, the module parses as garbage and the file
+contributes nothing. Nothing errors and nothing is logged. All 1004 of the game's own
+item scripts start with `module` on the first non-empty line, and the only script files
+carrying comments are `xui` skins, which use a different parser. The reasoning lives in
+the generator and here instead.
+
+`Hidden` and not `OBSOLETE`, which was shipped first and did nothing. Both are real
+script keywords and `Item.DoParam` parses both, but `ScriptBucket.LoadScripts` tests
+`getObsolete()` and skips the object outright, so an obsolete item never enters the
+bucket, never reaches `getAllItems()`, and `Preprocess` never registers its name. It
+parses without complaint and reports nothing; the only symptom is that the fix does not
+work. `LoadScripts` does not test `isHidden()`, while the item browser and the foraging
+system both do.
 Registering a name does not change what a container receives: the id only matters to a
 distribution bucket that lists it, and none does.
 

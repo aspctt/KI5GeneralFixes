@@ -26,6 +26,7 @@ public class TestRunner {
 	private static String referenceRoot;
 	private static final List<String> loadFiles = new ArrayList<String>();
 	private static List<String> characterTraits = new ArrayList<String>();
+	private static List<String> itemTypes = new ArrayList<String>();
 	private static List<String> proceduralNames = new ArrayList<String>();
 	private static final Map<String, Object> sandboxDefaults = new LinkedHashMap<String, Object>();
 	private static int translationFailures = 0;
@@ -48,6 +49,9 @@ public class TestRunner {
 
 		characterTraits = readConstants("zombie.scripting.objects.CharacterTrait");
 		System.out.println("CharacterTrait constants found in this build: " + characterTraits.size());
+
+		itemTypes = readConstants("zombie.scripting.objects.ItemType");
+		System.out.println("ItemType constants found in this build: " + itemTypes.size());
 
 		proceduralNames = readProceduralNames();
 		System.out.println("Loot tables found in this build: " + proceduralNames.size());
@@ -102,6 +106,13 @@ public class TestRunner {
 		KahluaTable traits = platform.newTable();
 		for (String n : characterTraits) traits.rawset(n, n);
 		env.rawset("CharacterTrait", traits);
+
+		// Read from the jar rather than written out here, so an ItemType this build no
+		// longer has is nil in a spec exactly as it would be in game. CONTAINER is the
+		// one that matters: Preprocess registers an item's name only if it carries it.
+		KahluaTable types = platform.newTable();
+		for (String n : itemTypes) types.rawset(n, n);
+		env.rawset("ItemType", types);
 
 		KahluaTable defaults = platform.newTable();
 		for (Map.Entry<String, Object> e : sandboxDefaults.entrySet()) {

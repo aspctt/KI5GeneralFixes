@@ -54,17 +54,63 @@ local Examined = {}
 -- player can read it back out of the console when reporting one.
 KI5GF.MissingContainerIds = {}
 
+-- Said once, the first time anything is found wrong. Presence of an entry is checked
+-- one id at a time above, which cannot tell "the script never loaded" from "this one id
+-- is missing from it". Counting what the module actually holds separates the two, and
+-- it is the question worth answering first when a report says the fix did nothing.
+local Summarised = false
+
+local function SummariseModule()
+	if Summarised then return end
+	Summarised = true
+
+	local Items = getScriptManager():getAllItems()
+	if not Items then
+		print("KI5 General Fixes: the script manager returned no item list at all.")
+		return
+	end
+
+	local Declared, Containers = 0, 0
+	for Index = 0, Items:size() - 1 do
+		local Item = Items:get(Index)
+		if Item and Item:getModuleName() == MODULE then
+			Declared = Declared + 1
+			if Item:isItemType(ItemType.CONTAINER) then Containers = Containers + 1 end
+		end
+	end
+
+	print("KI5 General Fixes: registration script holds " .. Declared .. " item(s), "
+		.. Containers .. " of them containers. Zero means the script never loaded; "
+		.. "items but no containers means ItemType is not being read.")
+end
+
 local function Examine(Type)
 	if Type == nil or Type == "" then return end
 	if VANILLA[Type] then return end
 	if Examined[Type] then return end
 	Examined[Type] = true
 
-	if getScriptManager():getItem(MODULE .. "." .. Type) then return end
+	local Item = getScriptManager():getItem(MODULE .. "." .. Type)
+
+	-- Present is not the same as counted. Preprocess registers an item only if its
+	-- ItemType is CONTAINER, so an entry that parsed but carries the wrong type
+	-- registers nothing while looking entirely fine from here. Worth telling apart,
+	-- because the two have completely different causes and the first version of this
+	-- file could not distinguish them.
+	local Reason
+	if not Item then
+		Reason = "no entry for it in the registration script"
+	elseif not Item:isItemType(ItemType.CONTAINER) then
+		Reason = "its entry is not a container item, so the game does not register it"
+	else
+		return
+	end
+
+	SummariseModule()
 
 	table.insert(KI5GF.MissingContainerIds, Type)
-	print("KI5 General Fixes: vehicle container '" .. Type .. "' is not registered. "
-		.. "Rebuild with tools/generate_container_ids.py, or report this id.")
+	print("KI5 General Fixes: vehicle container '" .. Type .. "' is not registered, "
+		.. Reason .. ". Rebuild with tools/generate_container_ids.py, or report this id.")
 end
 
 local function AuditVehicle(Vehicle)

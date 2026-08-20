@@ -1,32 +1,3 @@
-/*
- * Container id registration. GENERATED, do not edit.
- *
- * Rebuild with: python tools/generate_container_ids.py
- *
- * A vehicle part that declares a container gets an ItemContainer whose type is
- * the part's id. ItemConfigurator.Preprocess registers only nine such names,
- * hardcoded in the engine, so every other one fails its lookup and writes a
- * debug log line on each loot roll. Preprocess does register every item script
- * whose ItemType is CONTAINER, by bare name, which is the only registration
- * path a mod can reach.
- *
- * These items exist to seed that table. OBSOLETE keeps them out of the item
- * browser and out of foraging, and none is in any loot table or recipe, so none
- * can spawn. Registering a name does not change what a container receives: the
- * id only matters to a distribution bucket that lists it, and none does.
- */
-
-/*
- * Bare names shared with a real item, at the time of generation.
- *
- * FindItem resolves a name carrying a module outright, and resolves a bare one
- * against Base first. So a real item in Base wins its own bare lookup and the
- * entry here is never reached. One in another module leaves a bare lookup
- * ambiguous, though every reference to these is fully qualified today.
- */
-// P19ARoofrack also declared in Base, which wins any bare lookup
-// Trunk2 also declared in damnCraft, neither in Base
-
 module KI5GF
 {
 	item 1000FuelTank
@@ -34,7 +5,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item 1500WaterTruckTank
@@ -42,7 +13,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunk
@@ -50,7 +21,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunkLBL
@@ -58,7 +29,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunkLBR
@@ -66,7 +37,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunkLTL
@@ -74,7 +45,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunkLTR
@@ -82,7 +53,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunkRBL
@@ -90,7 +61,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunkRBR
@@ -98,7 +69,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunkRL
@@ -106,7 +77,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunkRR
@@ -114,7 +85,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunkRTL
@@ -122,7 +93,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ARRWTrunkRTR
@@ -130,7 +101,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item B700Roofrack
@@ -138,7 +109,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item B700Trunk
@@ -146,7 +117,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item B700TrunkLeft
@@ -154,7 +125,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item B700TrunkRight
@@ -162,7 +133,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BAN65CenterConsole
@@ -170,7 +141,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BAN65RearStorage
@@ -178,7 +149,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BAN65Roofrack
@@ -186,7 +157,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BAN65RoofrackRollbar
@@ -194,7 +165,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BAN65Trunk
@@ -202,7 +173,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BMWE30Roofrack
@@ -210,7 +181,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BMWE30TrunkS
@@ -218,7 +189,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BMWE30TrunkT
@@ -226,7 +197,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BR89Roofrack
@@ -234,7 +205,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BR89Trunk
@@ -242,7 +213,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BTL63InnerTrunk
@@ -250,7 +221,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BTL63Roofrack
@@ -258,7 +229,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item BTL63Trunk
@@ -266,7 +237,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CAM69Roofrack
@@ -274,7 +245,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CAM69Trunk
@@ -282,7 +253,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CAM79Roofrack
@@ -290,7 +261,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CAM79Trunk
@@ -298,7 +269,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CAP85Trunk
@@ -306,7 +277,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CAP85TrunkWagon
@@ -314,7 +285,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CF8KTrunk
@@ -322,7 +293,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76FDSideStorageLF
@@ -330,7 +301,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76FDSideStorageLR
@@ -338,7 +309,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76FDSideStorageRF
@@ -346,7 +317,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76FDSideStorageRR
@@ -354,7 +325,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76FDTrunk
@@ -362,7 +333,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76RightMounts
@@ -370,7 +341,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76Roofrack
@@ -378,7 +349,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SRoofrack
@@ -386,7 +357,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SSideStorageFL
@@ -394,7 +365,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SSideStorageFR
@@ -402,7 +373,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SSideStorageRL
@@ -410,7 +381,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SSideStorageRR
@@ -418,7 +389,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SideStorageLF
@@ -426,7 +397,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SideStorageLM
@@ -434,7 +405,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SideStorageLR
@@ -442,7 +413,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SideStorageLT
@@ -450,7 +421,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SideStorageRF
@@ -458,7 +429,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SideStorageRM
@@ -466,7 +437,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SideStorageRR
@@ -474,7 +445,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76SideStorageRT
@@ -482,7 +453,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76TruckBedExtras
@@ -490,7 +461,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76Trunk
@@ -498,7 +469,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76TrunkSub
@@ -506,7 +477,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76TrunkSub2
@@ -514,7 +485,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76TrunkW
@@ -522,7 +493,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH76wreckerSideStorage
@@ -530,7 +501,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH88Roofrack
@@ -538,7 +509,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CH88Trunk
@@ -546,7 +517,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CHE70Roofrack
@@ -554,7 +525,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CHE70SmugglersBox
@@ -562,7 +533,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CHE70Trunk
@@ -570,7 +541,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CHE70TrunkE
@@ -578,7 +549,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CHE70TrunkS
@@ -586,7 +557,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CHE70TrunkW
@@ -594,7 +565,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CHR69Roofrack
@@ -602,7 +573,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CHR69Trunk
@@ -610,7 +581,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CNY76Roofrack
@@ -618,7 +589,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CNY76Trunk
@@ -626,7 +597,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item COR84Roofrack
@@ -634,7 +605,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item COR84Toolbox
@@ -642,7 +613,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item COR84Trunk
@@ -650,7 +621,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item COR84TrunkF
@@ -658,7 +629,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CUDARoofrack
@@ -666,7 +637,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CUDATrunk
@@ -674,7 +645,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CVPI92Gunrack
@@ -682,7 +653,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item CVPI92Trunk
@@ -690,7 +661,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DAMNBackLeftArmor
@@ -698,7 +669,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DAMNBackRightArmor
@@ -706,7 +677,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DAMNBedOne
@@ -714,7 +685,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DAMNBedTwo
@@ -722,7 +693,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DAMNGunrack
@@ -730,7 +701,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DAMNStretcher
@@ -738,7 +709,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DEF89CenterConsole
@@ -746,7 +717,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DEF89Roofrack
@@ -754,7 +725,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DEF89StorageLeft
@@ -762,7 +733,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DEF89StorageRight
@@ -770,7 +741,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DEF89TruckBedAddon
@@ -778,7 +749,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DEF89Trunk
@@ -786,7 +757,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DEF89Trunk130
@@ -794,7 +765,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DEL85Trunk
@@ -802,7 +773,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DEL85TrunkWagon
@@ -810,7 +781,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DEV84Trunk
@@ -818,7 +789,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DG70Roofrack
@@ -826,7 +797,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DG70Trunk
@@ -834,7 +805,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DGC89Roofrack
@@ -842,7 +813,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DGC89Trunk
@@ -850,7 +821,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DMC12RearStorage
@@ -858,7 +829,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item DMC12Trunk
@@ -866,7 +837,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item E150RearCabinet
@@ -874,7 +845,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item E150RearSeatOne
@@ -882,7 +853,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item E150RearSeatThree
@@ -890,7 +861,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item E150RearSeatTwo
@@ -898,7 +869,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item E150Roofrack
@@ -906,7 +877,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item E150Trunk
@@ -914,7 +885,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ECTO1Roofrack
@@ -922,7 +893,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ECTO1Trunk
@@ -930,7 +901,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ELE84Trunk
@@ -938,7 +909,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ESC70Roofrack
@@ -946,7 +917,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ESC70TrunkS
@@ -954,7 +925,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ESC70TrunkW
@@ -962,7 +933,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F1502Roofrack
@@ -970,7 +941,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F1502SideStorageL
@@ -978,7 +949,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F1502SideStorageR
@@ -986,7 +957,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502Gunrack
@@ -994,7 +965,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502HeadacheRack
@@ -1002,7 +973,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502Roofrack
@@ -1010,7 +981,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502SideStorageLF
@@ -1018,7 +989,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502SideStorageLM
@@ -1026,7 +997,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502SideStorageLR
@@ -1034,7 +1005,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502SideStorageLT
@@ -1042,7 +1013,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502SideStorageRF
@@ -1050,7 +1021,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502SideStorageRM
@@ -1058,7 +1029,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502SideStorageRR
@@ -1066,7 +1037,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502SideStorageRT
@@ -1074,7 +1045,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F3502Trunk
@@ -1082,7 +1053,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F350InsideFrontStorage
@@ -1090,7 +1061,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F350InsideLeftStorage
@@ -1098,7 +1069,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F350InsideRightBottomStorage
@@ -1106,7 +1077,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F350InsideRightTopStorage
@@ -1114,7 +1085,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F350LowCornerStorage
@@ -1122,7 +1093,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F350LowStorage
@@ -1130,7 +1101,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F350RearStorage
@@ -1138,7 +1109,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F350RightStorage
@@ -1146,7 +1117,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F350TallStorage
@@ -1154,7 +1125,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F700TrunkBN
@@ -1162,7 +1133,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F700TrunkBX
@@ -1170,7 +1141,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F700TrunkLeftBX
@@ -1178,7 +1149,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F700TrunkSW
@@ -1186,7 +1157,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F700TrunkSWGuncabinet
@@ -1194,7 +1165,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item F700TrunkSWGunrack
@@ -1202,7 +1173,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FLC73Roofrack
@@ -1210,7 +1181,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FLC73Storage
@@ -1218,7 +1189,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FLC73Trunk
@@ -1226,7 +1197,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FRB68CenterConsole
@@ -1234,7 +1205,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FRB68Roofrack
@@ -1242,7 +1213,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FRB68Trunk
@@ -1250,7 +1221,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FRB77Roofrack
@@ -1258,7 +1229,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FRB77Trunk
@@ -1266,7 +1237,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FRB82Roofrack
@@ -1274,7 +1245,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FRB82Trunk
@@ -1282,7 +1253,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item FakeSeat
@@ -1290,7 +1261,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GEO91Roofrack
@@ -1298,7 +1269,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GEO91Trunk
@@ -1306,7 +1277,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GM85Roofrack
@@ -1314,7 +1285,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GNX87Gunrack
@@ -1322,7 +1293,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GNX87Roofrack
@@ -1330,7 +1301,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GNX87Trunk
@@ -1338,7 +1309,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GT500Roofrack
@@ -1346,7 +1317,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GT500Trunk
@@ -1354,7 +1325,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GTO66Roofrack
@@ -1362,7 +1333,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GTO66Trunk
@@ -1370,7 +1341,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GTR73Roofrack
@@ -1378,7 +1349,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GTR73Trunk
@@ -1386,7 +1357,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item GasTank
@@ -1394,7 +1365,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item HLX88Roofrack
@@ -1402,7 +1373,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item HLX88Trunk
@@ -1410,7 +1381,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ISOTrunk1
@@ -1418,7 +1389,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ISOTrunk2
@@ -1426,7 +1397,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ISOTrunk3
@@ -1434,7 +1405,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ISOTrunk4
@@ -1442,7 +1413,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ISZ89Roofrack
@@ -1450,7 +1421,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item ISZ89Trunk
@@ -1458,7 +1429,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item JP82Roofrack
@@ -1466,7 +1437,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item JP82Trunk
@@ -1474,7 +1445,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item JP82Trunkt
@@ -1482,7 +1453,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item JP84Roofrack
@@ -1490,7 +1461,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item JP84Trunk
@@ -1498,7 +1469,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item JP92Roofrack
@@ -1506,7 +1477,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item JP92Trunk
@@ -1514,7 +1485,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item KI5CRCabsBottom
@@ -1522,7 +1493,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item KI5CRCabsSide
@@ -1530,7 +1501,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item KI5CRCabsTop
@@ -1538,7 +1509,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item KI5CRFloor
@@ -1546,7 +1517,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item KI5CRToolbox
@@ -1554,7 +1525,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item KI5TRCLTrunk
@@ -1562,7 +1533,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item KI5TRCMTrunk
@@ -1570,7 +1541,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item KI5TRCSTrunk
@@ -1578,7 +1549,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item KI5TRToolBox
@@ -1586,7 +1557,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item KI5TRTrunk
@@ -1594,7 +1565,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LES85Trunk
@@ -1602,7 +1573,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LES85TrunkWagon
@@ -1610,7 +1581,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LIN93Floor
@@ -1618,7 +1589,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LIN93Minibar
@@ -1626,7 +1597,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LIN93Trunk
@@ -1634,7 +1605,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LIN93Trunkrack
@@ -1642,7 +1613,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LP400Roofrack
@@ -1650,7 +1621,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LP400Trunk
@@ -1658,7 +1629,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LP400TrunkFront
@@ -1666,7 +1637,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LS400Roofrack
@@ -1674,7 +1645,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LS400Trunk
@@ -1682,7 +1653,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LTD91Gunrack
@@ -1690,7 +1661,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LTD91Roofrack
@@ -1698,7 +1669,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LTD91Trunk
@@ -1706,7 +1677,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item LTD91TrunkWagon
@@ -1714,7 +1685,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1008Trunk
@@ -1722,7 +1693,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1009Trunk
@@ -1730,7 +1701,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1010Trunk
@@ -1738,7 +1709,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M101A2Trunk
@@ -1746,7 +1717,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M101A3Trunk
@@ -1754,7 +1725,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1028Trunk
@@ -1762,7 +1733,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1031StorageBL
@@ -1770,7 +1741,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1031StorageBR
@@ -1778,7 +1749,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1031StorageFL
@@ -1786,7 +1757,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1031StorageFR
@@ -1794,7 +1765,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1031StorageML
@@ -1802,7 +1773,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1031StorageMR
@@ -1810,7 +1781,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1031StorageRL
@@ -1818,7 +1789,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1031StorageRR
@@ -1826,7 +1797,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M1031Trunk
@@ -1834,7 +1805,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M10XXToolboxLeft
@@ -1842,7 +1813,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M10XXToolboxRight
@@ -1850,7 +1821,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M127TrunkFront
@@ -1858,7 +1829,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M127TrunkRear
@@ -1866,7 +1837,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M128Trunk
@@ -1874,7 +1845,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M129Trunk
@@ -1882,7 +1853,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M35A2Trunk
@@ -1890,7 +1861,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M49A2CTrunk
@@ -1898,7 +1869,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M747Trunk
@@ -1906,7 +1877,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M911Toolbox
@@ -1914,7 +1885,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M911Trunk
@@ -1922,7 +1893,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M923Storage
@@ -1930,7 +1901,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M923Trunk
@@ -1938,7 +1909,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M967Trunk1
@@ -1946,7 +1917,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M967Trunk2
@@ -1954,7 +1925,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M967Trunk3
@@ -1962,7 +1933,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M998Roofrack
@@ -1970,7 +1941,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item M998Trunk
@@ -1978,7 +1949,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MAN80LeftStorage
@@ -1986,7 +1957,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MAN80RightStorage
@@ -1994,7 +1965,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MAN80Roofrack
@@ -2002,7 +1973,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MAN80Trunk
@@ -2010,7 +1981,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MINI69Roofrack
@@ -2018,7 +1989,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MINI69Trunk
@@ -2026,7 +1997,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MR2CenterConsole
@@ -2034,7 +2005,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MR2FrontTrunk
@@ -2042,7 +2013,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MR2Roofrack
@@ -2050,7 +2021,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MR2Trunk
@@ -2058,7 +2029,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MST69Holster
@@ -2066,7 +2037,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MST69InteriorCrates
@@ -2074,7 +2045,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MST69RearStorage
@@ -2082,7 +2053,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MST69Roofrack
@@ -2090,7 +2061,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MST69Trunk
@@ -2098,7 +2069,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item MST69TrunkAP
@@ -2106,7 +2077,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item N240PrivacyCover
@@ -2114,7 +2085,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item N240Roofrack
@@ -2122,7 +2093,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item N240Trunk
@@ -2130,7 +2101,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item OLD84Trunk
@@ -2138,7 +2109,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item P19ABigTrunkCompartment0
@@ -2146,7 +2117,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item P19ABigTrunkCompartment0b
@@ -2154,7 +2125,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item P19ARoofrack
@@ -2162,7 +2133,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item P19ASmallTrunkCompartment1
@@ -2170,7 +2141,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item P19ASmallTrunkCompartment1b
@@ -2178,7 +2149,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item P19ASmallTrunkCompartment2
@@ -2186,7 +2157,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item P19ASmallTrunkCompartment3
@@ -2194,7 +2165,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item P19ASmallTrunkCompartment3b
@@ -2202,7 +2173,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item PAR85Trunk
@@ -2210,7 +2181,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item PAR85TrunkWagon
@@ -2218,7 +2189,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item PRS82Roofrack
@@ -2226,7 +2197,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item PRS82SeatRearLeft
@@ -2234,7 +2205,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item PRS82SeatRearRight
@@ -2242,7 +2213,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item PRS82Trunk
@@ -2250,7 +2221,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item PRX75CenterConsole
@@ -2258,7 +2229,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item PRX75Roofrack
@@ -2266,7 +2237,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item PRX75Trunk
@@ -2274,7 +2245,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item PWRTrunk
@@ -2282,7 +2253,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item R32Roofrack
@@ -2290,7 +2261,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item R32Trunk
@@ -2298,7 +2269,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item RNG91Storage
@@ -2306,7 +2277,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item RNG91TruckBedExtras
@@ -2314,7 +2285,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item RNG91Trunk
@@ -2322,7 +2293,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item RR91Roofrack
@@ -2330,7 +2301,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item RR91Trunk
@@ -2338,7 +2309,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item RUN70Roofrack
@@ -2346,7 +2317,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item RUN70Trunk
@@ -2354,7 +2325,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SIL93Toolbox
@@ -2362,7 +2333,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SIL93ToolboxFlat
@@ -2370,7 +2341,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SIL93ToolboxTwo
@@ -2378,7 +2349,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SIL93Trunk3
@@ -2386,7 +2357,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SIL93Trunk4
@@ -2394,7 +2365,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SIL93Trunk5
@@ -2402,7 +2373,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SSP93Gunrack
@@ -2410,7 +2381,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SSP93Roofrack
@@ -2418,7 +2389,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SSP93Trunk
@@ -2426,7 +2397,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item STP85Roofrack
@@ -2434,7 +2405,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item STP85Trunk1
@@ -2442,7 +2413,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SUB87Gunrack
@@ -2450,7 +2421,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SUB87Roofrack
@@ -2458,7 +2429,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SUB87SideStorage
@@ -2466,7 +2437,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SUB87Trunk
@@ -2474,7 +2445,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SUB93Gunrack
@@ -2482,7 +2453,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SUB93RollbarToolbox
@@ -2490,7 +2461,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SUB93Roofrack
@@ -2498,7 +2469,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SUB93Trunk1
@@ -2506,7 +2477,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SUB93Trunk2
@@ -2514,7 +2485,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatBackLeft
@@ -2522,7 +2493,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatBackMiddle
@@ -2530,7 +2501,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatBackRight
@@ -2538,7 +2509,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatChair
@@ -2546,7 +2517,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatCrew1
@@ -2554,7 +2525,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatCrew2
@@ -2562,7 +2533,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatCrew3
@@ -2570,7 +2541,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatCrew4
@@ -2578,7 +2549,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatCrew5
@@ -2586,7 +2557,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatCrew6
@@ -2594,7 +2565,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatCrew7
@@ -2602,7 +2573,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatCrew8
@@ -2610,7 +2581,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatFrontL
@@ -2618,7 +2589,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatFrontMiddle
@@ -2626,7 +2597,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatFrontR
@@ -2634,7 +2605,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatMiddleMiddle
@@ -2642,7 +2613,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP1
@@ -2650,7 +2621,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP10
@@ -2658,7 +2629,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP11
@@ -2666,7 +2637,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP12
@@ -2674,7 +2645,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP13
@@ -2682,7 +2653,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP14
@@ -2690,7 +2661,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP2
@@ -2698,7 +2669,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP3
@@ -2706,7 +2677,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP4
@@ -2714,7 +2685,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP5
@@ -2722,7 +2693,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP6
@@ -2730,7 +2701,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP7
@@ -2738,7 +2709,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP8
@@ -2746,7 +2717,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatP9
@@ -2754,7 +2725,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatRearL
@@ -2762,7 +2733,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatRearMiddle
@@ -2770,7 +2741,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item SeatRearR
@@ -2778,7 +2749,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item TAU93Roofrack
@@ -2786,7 +2757,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item TAU93TrunkS
@@ -2794,7 +2765,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item TAU93TrunkW
@@ -2802,7 +2773,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item TireRearLeft
@@ -2810,7 +2781,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item TireRearRight
@@ -2818,7 +2789,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item TrailerAnimalEggs
@@ -2826,7 +2797,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item TrailerAnimalFood
@@ -2834,7 +2805,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item TrailerTrunk
@@ -2842,7 +2813,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item TruckBedSeat
@@ -2850,7 +2821,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item Trunk2
@@ -2858,7 +2829,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item V100Toolbox
@@ -2866,7 +2837,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item V100Trunk
@@ -2874,7 +2845,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VAN63InnerTrunk
@@ -2882,7 +2853,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VAN63Roofrack
@@ -2890,7 +2861,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VAN63ToolBoxLeft
@@ -2898,7 +2869,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VAN63ToolBoxRight
@@ -2906,7 +2877,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VAN63Trunk
@@ -2914,7 +2885,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VAN63UnderMiddleLeftSeat
@@ -2922,7 +2893,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VAN63UnderMiddleRightSeat
@@ -2930,7 +2901,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VAN63UnderRearLeftSeat
@@ -2938,7 +2909,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VAN63UnderRearRightSeat
@@ -2946,7 +2917,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VAN63WeldedRoofrack
@@ -2954,7 +2925,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VL200Roofrack
@@ -2962,7 +2933,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VL200TrunkS
@@ -2970,7 +2941,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item VL200TrunkW
@@ -2978,7 +2949,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item W460Roofrack
@@ -2986,7 +2957,7 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 
 	item W460Trunk
@@ -2994,6 +2965,6 @@ module KI5GF
 		ItemType = base:container,
 		Weight = 1.0,
 		Capacity = 1,
-		OBSOLETE = true,
+		Hidden = true,
 	}
 }

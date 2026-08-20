@@ -13,9 +13,16 @@ because nothing in Preprocess reads one.
 
 It does register every item script whose ItemType is CONTAINER, by bare name. So
 this writes one minimal container item per missing id. The items exist to seed
-that string table and nothing else: OBSOLETE keeps them out of the item browser
-and out of foraging, and none of them is in any loot table or recipe, so none can
-ever spawn.
+that string table and nothing else: Hidden keeps them out of the item browser and
+out of foraging, and none of them is in any loot table or recipe, so none can ever
+spawn.
+
+Hidden rather than OBSOLETE, which was tried first and does not work. Both are
+real script keywords and Item.DoParam parses both, but ScriptBucket.LoadScripts
+tests getObsolete() and skips the object outright, so it never enters the bucket,
+never reaches getAllItems(), and Preprocess never sees it. The whole point is to
+be in that collection. LoadScripts does not test isHidden(), while both the item
+browser and the foraging system do, which is exactly the split wanted here.
 
 Registering an id does not by itself change what spawns. The id only matters if
 some distribution bucket lists it, and none does. What it changes is that the
@@ -189,62 +196,31 @@ def collisions(ids, items):
 
 
 def build(ids, shadowed, ambiguous):
-    lines = [
-        "/*",
-        " * Container id registration. GENERATED, do not edit.",
-        " *",
-        " * Rebuild with: python tools/generate_container_ids.py",
-        " *",
-        " * A vehicle part that declares a container gets an ItemContainer whose type is",
-        " * the part's id. ItemConfigurator.Preprocess registers only nine such names,",
-        " * hardcoded in the engine, so every other one fails its lookup and writes a",
-        " * debug log line on each loot roll. Preprocess does register every item script",
-        " * whose ItemType is CONTAINER, by bare name, which is the only registration",
-        " * path a mod can reach.",
-        " *",
-        " * These items exist to seed that table. OBSOLETE keeps them out of the item",
-        " * browser and out of foraging, and none is in any loot table or recipe, so none",
-        " * can spawn. Registering a name does not change what a container receives: the",
-        " * id only matters to a distribution bucket that lists it, and none does.",
-        " */",
-    ]
+    """The script itself, declarations only.
 
-    # An id has to be spelled exactly as the part is, so where a real item already
-    # carries that bare name the two share it. Recorded here so the position is a
-    # decision on the record rather than something rediscovered later.
-    if shadowed or ambiguous:
-        lines += [
-            "",
-            "/*",
-            " * Bare names shared with a real item, at the time of generation.",
-            " *",
-            " * FindItem resolves a name carrying a module outright, and resolves a bare one",
-            " * against Base first. So a real item in Base wins its own bare lookup and the",
-            " * entry here is never reached. One in another module leaves a bare lookup",
-            " * ambiguous, though every reference to these is fully qualified today.",
-            " */",
-        ]
-        for name, modules in shadowed:
-            lines.append("// %s also declared in %s, which wins any bare lookup"
-                         % (name, ", ".join(modules)))
-        for name, modules in ambiguous:
-            lines.append("// %s also declared in %s, neither in Base"
-                         % (name, ", ".join(modules)))
+    Nothing may precede `module`, and there are no comments anywhere in the file.
+    ScriptManager.CreateFromToken locates a block by `indexOf("module")` on the raw
+    token and takes the module name from there to the opening brace, so a comment
+    that merely contains the word steals the match and the real declaration is
+    never seen. This file shipped with an explanatory header once and the whole
+    fix silently did nothing: the module parsed as garbage and held no items.
 
-    lines += [
-        "",
-        "module %s" % MODULE,
-        "{",
-    ]
+    Not one of the game's 1004 item scripts has a comment or anything before
+    `module`. The 28 files that do carry comments are xui skins, which go through
+    a different parser. So the reasoning lives in this module's docstring and in
+    README.md, and the shipped file stays declarations only. The collision report
+    goes to the console rather than into the file for the same reason.
+    """
+    lines = ["module %s" % MODULE, "{"]
     for name in sorted(ids):
         lines += [
-            "\titem %s" % name,
-            "\t{",
-            "\t\tItemType = base:container,",
-            "\t\tWeight = 1.0,",
-            "\t\tCapacity = 1,",
-            "\t\tOBSOLETE = true,",
-            "\t}",
+            "	item %s" % name,
+            "	{",
+            "		ItemType = base:container,",
+            "		Weight = 1.0,",
+            "		Capacity = 1,",
+            "		Hidden = true,",
+            "	}",
             "",
         ]
     if lines[-1] == "":

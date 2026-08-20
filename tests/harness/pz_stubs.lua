@@ -318,16 +318,55 @@ end
 -- restated here, so a generated script is checked as it was actually written.
 local ModItems
 
+-- "base:container" in a script is ItemType.CONTAINER at runtime. Only the local half
+-- is the constant, and the game upper cases it.
+local function ParseItemType(Value)
+	local Local = string.match(Value, "([%w_]+)%s*$")
+	return Local and string.upper(Local) or nil
+end
+
 local function ParseModItems()
 	local Items = {}
 	for _, Text in pairs(KI5GF_MOD_SCRIPTS or {}) do
 		local Module = "Base"
+		local Current
+
 		for Line in string.gmatch(Text, "[^\n]+") do
 			local Declared = string.match(Line, "^%s*module%s+([%w_]+)%s*$")
 			if Declared then Module = Declared end
 
 			local Name = string.match(Line, "^%s*item%s+([%w_]+)%s*$")
-			if Name then Items[Module .. "." .. Name] = { Module = Module, Name = Name } end
+			if Name then
+				Current = { Module = Module, Name = Name }
+				function Current:getName() return self.Name end
+				function Current:getModuleName() return self.Module end
+				function Current:getFullName() return self.Module .. "." .. self.Name end
+
+				-- Presence is not the whole story. Preprocess registers an item's name
+				-- only when its ItemType is CONTAINER, so a spec has to be able to tell
+				-- an entry that registers from one that merely parses.
+				function Current:isItemType(Wanted) return self.ItemType == Wanted end
+				function Current:getItemType() return self.ItemType end
+				function Current:isHidden() return self.Hidden == true end
+
+				Items[Module .. "." .. Name] = Current
+			end
+
+			if Current then
+				local Type = string.match(Line, "^%s*ItemType%s*=%s*([%w_:]+)%s*,?%s*$")
+				if Type then Current.ItemType = ParseItemType(Type) end
+
+				local Hidden = string.match(Line, "^%s*Hidden%s*=%s*(%a+)%s*,?%s*$")
+				if Hidden then Current.Hidden = string.lower(Hidden) == "true" end
+
+				-- An obsolete item never enters the bucket, so the script manager would
+				-- not hand it back at all. Modelled, because shipping OBSOLETE here is
+				-- the mistake that made the fix a no-op in game.
+				local Obsolete = string.match(Line, "^%s*OBSOLETE%s*=%s*(%a+)%s*,?%s*$")
+				if Obsolete and string.lower(Obsolete) == "true" then
+					Items[Current.Module .. "." .. Current.Name] = nil
+				end
+			end
 		end
 	end
 	return Items
@@ -338,6 +377,18 @@ local ScriptManagerStub = {}
 function ScriptManagerStub:getItem(FullType)
 	ModItems = ModItems or ParseModItems()
 	return ModItems[FullType]
+end
+
+-- A java ArrayList, indexed from zero, the same as the real one. Order is not
+-- guaranteed by the game, so nothing should depend on it.
+function ScriptManagerStub:getAllItems()
+	ModItems = ModItems or ParseModItems()
+
+	local Ordered = {}
+	for _, Item in pairs(ModItems) do table.insert(Ordered, Item) end
+	table.sort(Ordered, function(A, B) return A:getFullName() < B:getFullName() end)
+
+	return NewJavaList(Ordered)
 end
 
 function getScriptManager()
