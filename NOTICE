@@ -1,0 +1,80 @@
+"Project Zomboid" is a trademark of The Indie Stone. This project is in no way
+associated with nor endorsed by The Indie Stone.
+
+Other trademarks and registered trademarks are the property of the respective
+trademark holders.
+
+
+ABOUT THIS PROJECT
+
+KI5 General Fixes patches faults that KI5's vehicle mods share, rather than one
+vehicle at a time. Those vehicles are built from a common template, so a fault in
+the template reaches every car built on it. This targets that shared surface.
+
+It ships no files from any of them. Every fix is written from scratch against
+what those mods actually load, and stands down when the thing it targets is not
+present.
+
+
+THIRD-PARTY COMPONENTS
+
+Nothing from another mod is bundled here. This section exists so that stays true
+and visible: if a fix ever has to carry a file it did not write, it is listed
+here before it ships, with the terms it ships under and what was taken.
+
+The mods this one is written against are named below. Each remains the property
+of its author. None of them is redistributed, in whole or in part.
+
+  KI5's vehicles
+    By KI5, also known as bikinihorst. Steam Workshop, many items.
+
+    Bundled: nothing.
+
+    These are what the fixes are for. Their scripts and lua are read to work out
+    what the shared template does and where it goes wrong, the same way a bug
+    report is read. Nothing is copied out of them.
+
+  that DAMN Library
+    From "that DAMN Library", Steam Workshop 3171167894, by KI5.
+
+    Bundled: nothing. It is a hard dependency, required by every KI5 vehicle
+    already, so a player running any of them has it.
+
+    Where a fix hooks something DAMN provides, it registers through the library's
+    own entry points rather than replacing its files.
+
+  KI5 Mini-fixes
+    From "KI5 Mini-fixes", Steam Workshop 3740300378, by Пупсич.
+
+    Bundled: nothing.
+
+    It covers some of the same ground. Anything it already fixes is left to it,
+    and where both are installed this one gets out of the way rather than
+    fighting over the same call.
+
+  Specific Loot (KI5)
+    From "Specific Loot (KI5)", Steam Workshop 3457132019, by Пупсич.
+
+    Bundled: nothing. Read only, to know what already writes into KI5 vehicle
+    loot so nothing here writes over it.
+
+  Yet Another PZ Library
+    From "Yet Another PZ Library", Steam Workshop 3624971238, by Пупсич.
+
+    Bundled: nothing, and not a dependency. Read only, as what Specific Loot
+    sits on.
+
+
+LOCAL REFERENCE MATERIAL
+
+The unpacked source of every mod above is kept under other-mods/ so fixes can be
+written against what the game really loads. It is other people's work under other
+people's terms and is not published: the folder is in .gitignore and is excluded
+from the Workshop upload. Anyone building this repository supplies their own copy
+by subscribing to those mods.
+
+
+REMOVAL REQUESTS
+
+Any author who wishes their work removed from this project should contact
+aspctt. Removal requests will be honoured.

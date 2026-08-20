@@ -1,0 +1,2999 @@
+/*
+ * Container id registration. GENERATED, do not edit.
+ *
+ * Rebuild with: python tools/generate_container_ids.py
+ *
+ * A vehicle part that declares a container gets an ItemContainer whose type is
+ * the part's id. ItemConfigurator.Preprocess registers only nine such names,
+ * hardcoded in the engine, so every other one fails its lookup and writes a
+ * debug log line on each loot roll. Preprocess does register every item script
+ * whose ItemType is CONTAINER, by bare name, which is the only registration
+ * path a mod can reach.
+ *
+ * These items exist to seed that table. OBSOLETE keeps them out of the item
+ * browser and out of foraging, and none is in any loot table or recipe, so none
+ * can spawn. Registering a name does not change what a container receives: the
+ * id only matters to a distribution bucket that lists it, and none does.
+ */
+
+/*
+ * Bare names shared with a real item, at the time of generation.
+ *
+ * FindItem resolves a name carrying a module outright, and resolves a bare one
+ * against Base first. So a real item in Base wins its own bare lookup and the
+ * entry here is never reached. One in another module leaves a bare lookup
+ * ambiguous, though every reference to these is fully qualified today.
+ */
+// P19ARoofrack also declared in Base, which wins any bare lookup
+// Trunk2 also declared in damnCraft, neither in Base
+
+module KI5GF
+{
+	item 1000FuelTank
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item 1500WaterTruckTank
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunkLBL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunkLBR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunkLTL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunkLTR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunkRBL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunkRBR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunkRL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunkRR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunkRTL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ARRWTrunkRTR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item B700Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item B700Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item B700TrunkLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item B700TrunkRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BAN65CenterConsole
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BAN65RearStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BAN65Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BAN65RoofrackRollbar
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BAN65Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BMWE30Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BMWE30TrunkS
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BMWE30TrunkT
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BR89Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BR89Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BTL63InnerTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BTL63Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item BTL63Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CAM69Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CAM69Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CAM79Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CAM79Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CAP85Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CAP85TrunkWagon
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CF8KTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76FDSideStorageLF
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76FDSideStorageLR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76FDSideStorageRF
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76FDSideStorageRR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76FDTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76RightMounts
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SRoofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SSideStorageFL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SSideStorageFR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SSideStorageRL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SSideStorageRR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SideStorageLF
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SideStorageLM
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SideStorageLR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SideStorageLT
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SideStorageRF
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SideStorageRM
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SideStorageRR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76SideStorageRT
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76TruckBedExtras
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76TrunkSub
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76TrunkSub2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76TrunkW
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH76wreckerSideStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH88Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CH88Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CHE70Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CHE70SmugglersBox
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CHE70Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CHE70TrunkE
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CHE70TrunkS
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CHE70TrunkW
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CHR69Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CHR69Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CNY76Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CNY76Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item COR84Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item COR84Toolbox
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item COR84Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item COR84TrunkF
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CUDARoofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CUDATrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CVPI92Gunrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item CVPI92Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DAMNBackLeftArmor
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DAMNBackRightArmor
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DAMNBedOne
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DAMNBedTwo
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DAMNGunrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DAMNStretcher
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DEF89CenterConsole
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DEF89Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DEF89StorageLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DEF89StorageRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DEF89TruckBedAddon
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DEF89Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DEF89Trunk130
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DEL85Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DEL85TrunkWagon
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DEV84Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DG70Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DG70Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DGC89Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DGC89Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DMC12RearStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item DMC12Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item E150RearCabinet
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item E150RearSeatOne
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item E150RearSeatThree
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item E150RearSeatTwo
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item E150Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item E150Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ECTO1Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ECTO1Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ELE84Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ESC70Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ESC70TrunkS
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ESC70TrunkW
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F1502Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F1502SideStorageL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F1502SideStorageR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502Gunrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502HeadacheRack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502SideStorageLF
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502SideStorageLM
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502SideStorageLR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502SideStorageLT
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502SideStorageRF
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502SideStorageRM
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502SideStorageRR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502SideStorageRT
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F3502Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F350InsideFrontStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F350InsideLeftStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F350InsideRightBottomStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F350InsideRightTopStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F350LowCornerStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F350LowStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F350RearStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F350RightStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F350TallStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F700TrunkBN
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F700TrunkBX
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F700TrunkLeftBX
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F700TrunkSW
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F700TrunkSWGuncabinet
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item F700TrunkSWGunrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FLC73Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FLC73Storage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FLC73Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FRB68CenterConsole
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FRB68Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FRB68Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FRB77Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FRB77Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FRB82Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FRB82Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item FakeSeat
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GEO91Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GEO91Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GM85Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GNX87Gunrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GNX87Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GNX87Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GT500Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GT500Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GTO66Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GTO66Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GTR73Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GTR73Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item GasTank
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item HLX88Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item HLX88Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ISOTrunk1
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ISOTrunk2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ISOTrunk3
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ISOTrunk4
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ISZ89Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item ISZ89Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item JP82Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item JP82Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item JP82Trunkt
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item JP84Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item JP84Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item JP92Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item JP92Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item KI5CRCabsBottom
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item KI5CRCabsSide
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item KI5CRCabsTop
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item KI5CRFloor
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item KI5CRToolbox
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item KI5TRCLTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item KI5TRCMTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item KI5TRCSTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item KI5TRToolBox
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item KI5TRTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LES85Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LES85TrunkWagon
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LIN93Floor
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LIN93Minibar
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LIN93Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LIN93Trunkrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LP400Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LP400Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LP400TrunkFront
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LS400Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LS400Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LTD91Gunrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LTD91Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LTD91Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item LTD91TrunkWagon
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1008Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1009Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1010Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M101A2Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M101A3Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1028Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1031StorageBL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1031StorageBR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1031StorageFL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1031StorageFR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1031StorageML
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1031StorageMR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1031StorageRL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1031StorageRR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M1031Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M10XXToolboxLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M10XXToolboxRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M127TrunkFront
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M127TrunkRear
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M128Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M129Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M35A2Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M49A2CTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M747Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M911Toolbox
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M911Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M923Storage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M923Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M967Trunk1
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M967Trunk2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M967Trunk3
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M998Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item M998Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MAN80LeftStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MAN80RightStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MAN80Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MAN80Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MINI69Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MINI69Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MR2CenterConsole
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MR2FrontTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MR2Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MR2Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MST69Holster
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MST69InteriorCrates
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MST69RearStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MST69Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MST69Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item MST69TrunkAP
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item N240PrivacyCover
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item N240Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item N240Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item OLD84Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item P19ABigTrunkCompartment0
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item P19ABigTrunkCompartment0b
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item P19ARoofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item P19ASmallTrunkCompartment1
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item P19ASmallTrunkCompartment1b
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item P19ASmallTrunkCompartment2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item P19ASmallTrunkCompartment3
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item P19ASmallTrunkCompartment3b
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item PAR85Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item PAR85TrunkWagon
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item PRS82Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item PRS82SeatRearLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item PRS82SeatRearRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item PRS82Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item PRX75CenterConsole
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item PRX75Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item PRX75Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item PWRTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item R32Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item R32Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item RNG91Storage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item RNG91TruckBedExtras
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item RNG91Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item RR91Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item RR91Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item RUN70Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item RUN70Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SIL93Toolbox
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SIL93ToolboxFlat
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SIL93ToolboxTwo
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SIL93Trunk3
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SIL93Trunk4
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SIL93Trunk5
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SSP93Gunrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SSP93Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SSP93Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item STP85Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item STP85Trunk1
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SUB87Gunrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SUB87Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SUB87SideStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SUB87Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SUB93Gunrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SUB93RollbarToolbox
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SUB93Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SUB93Trunk1
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SUB93Trunk2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatBackLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatBackMiddle
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatBackRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatChair
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatCrew1
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatCrew2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatCrew3
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatCrew4
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatCrew5
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatCrew6
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatCrew7
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatCrew8
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatFrontL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatFrontMiddle
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatFrontR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatMiddleMiddle
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP1
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP10
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP11
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP12
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP13
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP14
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP3
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP4
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP5
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP6
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP7
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP8
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatP9
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatRearL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatRearMiddle
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item SeatRearR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item TAU93Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item TAU93TrunkS
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item TAU93TrunkW
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item TireRearLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item TireRearRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item TrailerAnimalEggs
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item TrailerAnimalFood
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item TrailerTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item TruckBedSeat
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item Trunk2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item V100Toolbox
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item V100Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VAN63InnerTrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VAN63Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VAN63ToolBoxLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VAN63ToolBoxRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VAN63Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VAN63UnderMiddleLeftSeat
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VAN63UnderMiddleRightSeat
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VAN63UnderRearLeftSeat
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VAN63UnderRearRightSeat
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VAN63WeldedRoofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VL200Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VL200TrunkS
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item VL200TrunkW
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item W460Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+
+	item W460Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		OBSOLETE = true,
+	}
+}

@@ -1,0 +1,49 @@
+###############################################################################
+# KI5 General Fixes - .gitignore for a Project Zomboid Lua mod
+###############################################################################
+
+## Test harness build output
+# The runner is compiled from tests/harness/TestRunner.java on demand.
+tests/build/
+
+## IDE / editor cruft
+.idea/
+.vscode/
+.vs/
+*.iml
+*.code-workspace
+*.swp
+*~
+
+## OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+## Logs and crash artefacts, wherever they land
+*.log
+hs_err_pid*.log
+logs/
+
+###############################################################################
+# Local-only reference material. NOT for publication.
+#
+# other-mods/ holds the unpacked source of the mods this one patches and the
+# libraries it sits on top of: KI5's vehicles and mini-fixes, that DAMN Library,
+# Specific Loot and Yet Another PZ Library. It is other people's work under
+# other people's terms, kept locally so the fixes can be written against what
+# the game actually loads. Publishing it would be redistributing it.
+#
+# example-script-*.lua are the author's own scripts from an unrelated project,
+# kept as a style reference only.
+#
+# Remove an entry only if you deliberately intend to publish it.
+# See NOTICE and LICENSE.
+###############################################################################
+external-files/
+context-files/
+bug-reports/
+other-mods/
+photoshop/
+example-script-*.lua
+NOTES.md

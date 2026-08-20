@@ -1,0 +1,53 @@
+KI5 General Fixes
+Copyright (c) 2026 aspctt. All Rights Reserved.
+
+
+ORIGINAL WORK
+
+All original work in this project is All Rights Reserved. You may not copy,
+redistribute, modify, sublicense, or create derivative works from it without
+prior written permission. This covers:
+
+  - KI5GeneralFixes/         the mod itself, all Lua, scripts and assets
+                             authored for it
+  - tests/                   the headless test harness and its specs
+  - tools/                   asset generators
+  - README.md, NOTICE        and other project documentation
+
+
+THIRD PARTY WORK
+
+This project patches other Project Zomboid mods. Those mods remain the property
+of their respective authors. The All Rights Reserved grant above does not extend
+to them, and nothing here claims rights over them.
+
+No files or code from any of them are incorporated. Every fix is written from
+scratch against the behaviour those mods exhibit, which is a description of what
+they do rather than a copy of how they do it. The mods concerned are named in
+NOTICE, with what was read and what was not taken.
+
+Should that ever change, the incorporated work will be listed in NOTICE before it
+ships, with the terms it ships under. Where a source mod states terms, those
+terms govern. Where a source mod states no terms, no permission has been granted
+by its author and the incorporation rests on nothing more than the absence of an
+objection.
+
+The unpacked source of the mods this one patches is kept locally, under
+other-mods/, so the fixes can be written against what the game actually loads. It
+is excluded from this repository and from the Workshop upload. It is not
+redistributed in any form.
+
+
+BASE GAME
+
+Project Zomboid is the property of The Indie Stone. This project is an
+unofficial modification, is not affiliated with or endorsed by The Indie Stone,
+and is subject to their terms for user created content. Portions of this
+project interoperate with, and follow the behaviour of, the base game's own
+code and data.
+
+
+CONTACT
+
+For permission requests, or for any author who wishes their work removed from
+this project, contact aspctt. Removal requests will be honoured.

@@ -1,0 +1,33 @@
+# Text files: detected automatically, stored and checked out with LF endings.
+# "text=auto" rather than a bare "text" matters. Setting it outright declares
+# every file in the repository to be text, which overrides Git's own detection
+# and strips CR bytes out of binaries as they are committed. Nothing complains:
+# the file is compared after that same normalisation, so it reads as unchanged
+# while what is stored no longer matches what is on disk.
+* text=auto eol=lf
+
+# Project Zomboid reads these as plain text. Item scripts, recipes, translation
+# files and mod.info are all line based, and the game is happy with LF.
+*.lua text eol=lf
+*.txt text eol=lf
+*.info text eol=lf
+*.xml text eol=lf
+
+# LF everywhere, PowerShell included. pwsh reads LF scripts without complaint, and
+# a single ending across the repo means no file ever shows as wholly changed just
+# because it was opened on a different machine.
+*.sh text eol=lf
+*.ps1 text eol=lf
+
+# Binaries, kept byte for byte. Auto-detection already covers these; naming them
+# is the belt to its braces, since the failure is silent and only shows up in a
+# fresh clone. Vehicle models and part textures are the ones that actually
+# matter here.
+*.fbx binary
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.psd binary
+*.ico binary
+*.zip binary
+*.class binary

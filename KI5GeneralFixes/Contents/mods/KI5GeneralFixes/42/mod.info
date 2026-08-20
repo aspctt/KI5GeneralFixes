@@ -1,0 +1,8 @@
+id=KI5GeneralFixes
+name=KI5 General Fixes
+modversion=0.1.0
+description=Fixes for the faults KI5's vehicles share, patched once at the template rather than one car at a time.
+icon=icon.png
+poster=poster.png
+require=damnlib
+versionMin=42.20

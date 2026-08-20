@@ -1,0 +1,65 @@
+version=1
+title=KI5 General Fixes
+tags=Build 42;Multiplayer;Vehicles
+description=[img]https://i.ibb.co/rK8yVgJz/Steam-Workshop-Description-Seperator.png[/img]
+description=
+description=KI5 General Fixes patches problems KI5's vehicles share, rather than one car at a time.
+description=
+description=They are built from a common template, so a fault in the template is a fault in every vehicle built on it. Fixing them one by one means a hundred near identical patches to keep in step. This targets the shared surface instead: fix it once, and every KI5 vehicle in your load order gets it.
+description=
+description=Nothing here touches a vehicle that is not KI5's, and every fix stands down quietly when the thing it patches is not installed.
+description=
+description=[b]Build 42.20+. Singleplayer and multiplayer. Safe on an existing save.[/b]
+description=
+description=
+description=[img]https://i.ibb.co/xtVSd8Kn/Steam-Workshop-Contents-Seperator.png[/img]
+description=
+description=[b]What it fixes:[/b]
+description=
+description=[list]
+description=[*]The stutter as a vehicle streams into range, and the [i]cannot get ID for container[/i] spam behind it
+description=[/list]
+description=
+description=[b]Vehicle container ids.[/b] The engine knows nine vehicle container names, hardcoded, and they are all vanilla's own. Every trunk, roofrack and seat a modded vehicle adds fails that lookup, and the game writes a line to two log files each time it does, once per container on every loot roll. That is what stutters when a car loads in.
+description=
+description=It also means no loot table can be written for those containers at all, because the lookup a distribution matches on never resolves. This registers them properly, 371 of them across every vehicle mod installed while building it, and nothing spawns or changes hands as a result. It is an engine gap rather than a KI5 one, so it covers any vehicle mod that hits it.
+description=
+description=Each further fix is listed here as it lands, with what was wrong and which vehicles it reaches.
+description=
+description=
+description=[img]https://i.ibb.co/2wC3Ykd/Steam-Workshop-Compatibility-Seperator.png[/img]
+description=
+description=　✓ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3171167894]that DAMN Library[/url] (required, every KI5 vehicle needs it already)
+description=　✓ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3740300378]KI5 Mini-fixes[/url] (anything it already fixes is left to it)
+description=　✓ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3457132019]Specific Loot (KI5)[/url]
+description=　✓ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3423424077]Vanilla Vehicles Replacer (KI5)[/url]
+description=　✓ Any KI5 vehicle, trailer or camper
+description=
+description=[b]Load order does not matter.[/b] Every mod's scripts are loaded before the game builds the table this fix writes into, so anywhere in the list works. that DAMN Library is declared as a requirement, so the game sorts that one out for you.
+description=
+description=Where another mod already does one of these jobs, this one gets out of the way.
+description=
+description=
+description=[img]https://i.ibb.co/d4CjJYgB/Steam-Workshop-Issues-Bugs-Seperator.png[/img]
+description=
+description=[list]
+description=[*]Restart the game after enabling or updating. Reloading the save is not enough.
+description=[*]See if it persists with only this mod, that DAMN Library and the vehicle active.
+description=[*]If not, add your mods back until it happens again.
+description=[*]Say which vehicle, singleplayer or multiplayer, and what you did.
+description=[*]Post console errors with it. Report on [url=https://github.com/aspctt/KI5GeneralFixes]GitHub repository[/url] or here.
+description=[*]The mod id is [b]KI5GeneralFixes[/b].
+description=[/list]
+description=
+description=
+description=[img]https://i.ibb.co/Z63wG3cw/Steam-Workshop-Credits-Seperator.png[/img]
+description=
+description=The vehicles are [url=https://steamcommunity.com/profiles/76561198030597952/myworkshopfiles/?appid=108600]KI5's[/url], and that DAMN Library with them. Go and give them a thumbs up. This mod would have nothing to do without them.
+description=
+description=[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3740300378]KI5 Mini-fixes[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3457132019]Specific Loot (KI5)[/url] by Пупсич cover neighbouring ground, and are worth running alongside this.
+description=
+description=[b]No files from any other mod are bundled here.[/b] Every fix is written from scratch against what those mods actually load. Full detail is in the NOTICE file.
+description=
+description=All Rights Reserved. If you are an author and want your work out of this, say so and it goes.
+description=
+description="Project Zomboid" is a trademark of The Indie Stone. This project is not associated with nor endorsed by The Indie Stone.
