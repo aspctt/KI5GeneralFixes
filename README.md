@@ -11,59 +11,38 @@ load order gets it.
 
 **Build 42.20+ | Singleplayer and multiplayer**
 
+Written for my own game and a friend's server, and published in case it is useful to
+anyone else. It is not a supported mod: issues may get read and may get fixed, or may
+not.
+
 
 Fixes
 -----
 
 **Vehicle Container Ids** - Stops the stutter as a vehicle streams into range, and the
-`cannot get ID for container` lines that come with it.
+`cannot get ID for container` lines behind it.
 
-A vehicle part that declares a container gets an `ItemContainer` whose type is the
-part's own id. `ItemPickInfo.GetPickInfo` resolves that id through
-`ItemConfigurator.GetIdForString`, and writes a debug log line every time it comes back
--1. That is once per container per loot roll, and each one is a synchronous write to two
-files, so a car with ten containers pays it ten times over while its loot is being
-rolled.
+A vehicle part's container takes its type from the part's own id.
+`ItemConfigurator.Preprocess` registers exactly nine such names, hardcoded in the engine
+and all of them vanilla's own, and nothing in it reads a container out of a vehicle
+script. So every trunk, roofrack and seat a modded vehicle adds fails the lookup, and
+the game writes to two log files each time, once per container on every loot roll.
 
-`ItemConfigurator.Preprocess` registers exactly nine vehicle container names, hardcoded
-in the engine, and all nine are vanilla's own part ids: `TruckBed`, `TruckBedOpen`,
-`GloveBox`, and the six numbered seats. Nothing in it reads a container declaration out
-of a vehicle script, so a vehicle that names its parts anything else can never resolve.
-It is an engine gap rather than a KI5 one, and this covers any vehicle that hits it.
-
-There is a second half nobody sees. `ItemPickInfo.isMatch` resolves a container selector
-with `containsSelectorID(containerId)`, so at -1 no container keyed distribution can
-match at all. These containers are not empty, because buckets with no selector still
-match, but nothing can currently be written to fill one specifically.
+The half nobody sees: a container selector matches on that same id, so at -1 no loot
+table can target these containers at all.
 
 Preprocess does register every item script whose ItemType is `CONTAINER`, by bare name,
-which is the one registration path a mod can reach. So the fix is a generated script of
-minimal container items, one per missing id, 371 of them across every vehicle mod on the
-author's machine. They are marked `Hidden`, which keeps them out of the item browser
-and out of foraging, and none is in any loot table or recipe, so none can spawn.
+which is the one registration path a mod can reach. The fix is a generated script of 371
+minimal container items, one per missing id, marked `Hidden` so they stay out of the
+item browser and out of foraging. None is in any loot table or recipe, so none can spawn,
+and registering a name changes nothing about what a container receives.
 
-The generated file begins with `module` and carries no comments, which is not a style
-choice. `ScriptManager.CreateFromToken` locates a block with `indexOf("module")` on the
-raw token and reads the module name from there to the opening brace, so a header comment
-that merely contains the word steals the match, the module parses as garbage and the file
-contributes nothing. Nothing errors and nothing is logged. All 1004 of the game's own
-item scripts start with `module` on the first non-empty line, and the only script files
-carrying comments are `xui` skins, which use a different parser. The reasoning lives in
-the generator and here instead.
+It is an engine gap rather than a KI5 one, so it covers any vehicle mod that hits it.
 
-`Hidden` and not `OBSOLETE`, which was shipped first and did nothing. Both are real
-script keywords and `Item.DoParam` parses both, but `ScriptBucket.LoadScripts` tests
-`getObsolete()` and skips the object outright, so an obsolete item never enters the
-bucket, never reaches `getAllItems()`, and `Preprocess` never registers its name. It
-parses without complaint and reports nothing; the only symptom is that the fix does not
-work. `LoadScripts` does not test `isHidden()`, while the item browser and the foraging
-system both do.
-Registering a name does not change what a container receives: the id only matters to a
-distribution bucket that lists it, and none does.
-
-Nothing needs to run for that to work. The lua that ships alongside it only audits: on
-each vehicle spawn it names, once, any container id the generated script did not cover,
-so a KI5 release we have never seen shows up as a single line instead of a stutter.
+Nothing needs to run for that to work. The lua alongside it only audits, naming any
+container id the generated script missed, once, so an unseen release shows up as a line
+rather than a stutter. Two parser constraints make or break the generated file and are
+documented in `tools/generate_container_ids.py`.
 
 
 Requirements
@@ -84,18 +63,6 @@ built, not discovered at runtime, because nothing at load time can tell which ve
 parts have containers. A vehicle mod installed after the last regeneration is not
 covered no matter where it sits in the order, and the audit will name it in the console
 when one spawns.
-
-
-Options
--------
-
-Anything cosmetic will be configurable in **Options -> Mods**, with each fix in its own
-section. These settings are per player.
-
-Anything that changes game balance lives in the **KI5 General Fixes** sandbox page
-instead, set when the world is created or by the server admin. That way every player in
-a multiplayer game is playing to the same numbers, rather than each client quietly
-running its own.
 
 
 Installation
@@ -169,8 +136,8 @@ python tools/generate_container_ids.py
 
 It is the only list of ids anywhere: the audit asks the script manager what exists
 rather than carrying a copy. Rerun it when a new vehicle mod is installed, which the
-audit will have told you about. It also reports any id that shares a bare name with a
-real item, and records those in the generated file's header.
+audit will have told you about. It also reports any id sharing a bare name with a real
+item, to the console: the generated file itself carries no comments.
 
 The Photoshop exports go to three places, one of which is only visible on the Workshop:
 

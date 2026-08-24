@@ -1,7 +1,7 @@
 id=KI5GeneralFixes
 name=KI5 General Fixes
 modversion=1.0.0
-description=Fixes faults shared across KI5's vehicles, at the engine level rather than one car at a time.<LINE><LINE>Registers the vehicle container ids build 42 never does, which stops the stutter and the console spam as a car streams into range.<LINE><LINE>Requires that DAMN Library. Load order does not matter.
+description=Registers the vehicle container ids build 42 never does, stopping the stutter as a KI5 car streams into range.<LINE><LINE>Requires that DAMN Library. Load order does not matter.<LINE><LINE>Written for my own game, published as is.
 icon=icon.png
 poster=poster.png
 require=damnlib

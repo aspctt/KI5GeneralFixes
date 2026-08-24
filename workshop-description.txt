@@ -1,61 +1,43 @@
 [img]https://i.ibb.co/rK8yVgJz/Steam-Workshop-Description-Seperator.png[/img]
 
-KI5 General Fixes patches problems KI5's vehicles share, rather than one car at a time.
+Fixes faults KI5's vehicles share, at the engine level rather than one car at a time.
 
-They are built from a common template, so a fault in the template is a fault in every vehicle built on it. Fixing them one by one means a hundred near identical patches to keep in step. This targets the shared surface instead: fix it once, and every KI5 vehicle in your load order gets it.
+[b]Build 42.20+. Singleplayer and multiplayer. Safe on an existing save. Load order does not matter.[/b]
 
-Nothing here touches a vehicle that is not KI5's, and every fix stands down quietly when the thing it patches is not installed.
-
-[b]Build 42.20+. Singleplayer and multiplayer. Safe on an existing save.[/b]
+I wrote this for my own game and a friend's server. It is published in case it is useful to anyone else, not as a supported mod. I may read bug reports and I may fix things, but I am not promising to.
 
 
 [img]https://i.ibb.co/xtVSd8Kn/Steam-Workshop-Contents-Seperator.png[/img]
 
-[b]What it fixes:[/b]
+[b]Vehicle container ids.[/b] The engine only knows nine vehicle container names, hardcoded, and they are all vanilla's own. Every trunk, roofrack and seat a modded vehicle adds fails that lookup, and the game writes to two log files each time, once per container on every loot roll. That is the stutter when a car loads in.
 
-[list]
-[*]The stutter as a vehicle streams into range, and the [i]cannot get ID for container[/i] spam behind it
-[/list]
+It also means no loot table can target those containers at all. This registers 371 of them. Nothing spawns or changes as a result.
 
-[b]Vehicle container ids.[/b] The engine knows nine vehicle container names, hardcoded, and they are all vanilla's own. Every trunk, roofrack and seat a modded vehicle adds fails that lookup, and the game writes a line to two log files each time it does, once per container on every loot roll. That is what stutters when a car loads in.
-
-It also means no loot table can be written for those containers at all, because the lookup a distribution matches on never resolves. This registers them properly, 371 of them across every vehicle mod installed while building it, and nothing spawns or changes hands as a result. It is an engine gap rather than a KI5 one, so it covers any vehicle mod that hits it.
-
-Each further fix is listed here as it lands, with what was wrong and which vehicles it reaches.
+An engine gap rather than a KI5 one, so it covers any vehicle mod that hits it.
 
 
 [img]https://i.ibb.co/2wC3Ykd/Steam-Workshop-Compatibility-Seperator.png[/img]
 
 　✓ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3171167894]that DAMN Library[/url] (required, every KI5 vehicle needs it already)
-　✓ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3740300378]KI5 Mini-fixes[/url] (anything it already fixes is left to it)
-　✓ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3457132019]Specific Loot (KI5)[/url]
+　✓ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3740300378]KI5 Mini-fixes[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3457132019]Specific Loot (KI5)[/url]
 　✓ [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3423424077]Vanilla Vehicles Replacer (KI5)[/url]
 　✓ Any KI5 vehicle, trailer or camper
 
-[b]Load order does not matter.[/b] Every mod's scripts are loaded before the game builds the table this fix writes into, so anywhere in the list works. that DAMN Library is declared as a requirement, so the game sorts that one out for you.
-
-Where another mod already does one of these jobs, this one gets out of the way.
+No files from any other mod are bundled here.
 
 
 [img]https://i.ibb.co/d4CjJYgB/Steam-Workshop-Issues-Bugs-Seperator.png[/img]
 
-[list]
-[*]Restart the game after enabling or updating. Reloading the save is not enough.
-[*]See if it persists with only this mod, that DAMN Library and the vehicle active.
-[*]If not, add your mods back until it happens again.
-[*]Say which vehicle, singleplayer or multiplayer, and what you did.
-[*]Post console errors with it. Report on [url=https://github.com/aspctt/KI5GeneralFixes]GitHub repository[/url] or here.
-[*]The mod id is [b]KI5GeneralFixes[/b].
-[/list]
+Restart the game after enabling, reloading the save is not enough.
+
+If you do report something, say which vehicle, singleplayer or multiplayer, and include the console error. [url=https://github.com/aspctt/KI5GeneralFixes]GitHub[/url] or here. The mod id is [b]KI5GeneralFixes[/b].
 
 
 [img]https://i.ibb.co/Z63wG3cw/Steam-Workshop-Credits-Seperator.png[/img]
 
-The vehicles are [url=https://steamcommunity.com/profiles/76561198030597952/myworkshopfiles/?appid=108600]KI5's[/url], and that DAMN Library with them. Go and give them a thumbs up. This mod would have nothing to do without them.
+The vehicles are [url=https://steamcommunity.com/profiles/76561198030597952/myworkshopfiles/?appid=108600]KI5's[/url], and that DAMN Library with them. This mod would have nothing to do without them.
 
-[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3740300378]KI5 Mini-fixes[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3457132019]Specific Loot (KI5)[/url] by Пупсич cover neighbouring ground, and are worth running alongside this.
-
-[b]No files from any other mod are bundled here.[/b] Every fix is written from scratch against what those mods actually load. Full detail is in the NOTICE file.
+[url=https://steamcommunity.com/sharedfiles/filedetails/?id=3740300378]KI5 Mini-fixes[/url] and [url=https://steamcommunity.com/sharedfiles/filedetails/?id=3457132019]Specific Loot (KI5)[/url] by Пупсич cover neighbouring ground and are worth running alongside this.
 
 All Rights Reserved. If you are an author and want your work out of this, say so and it goes.
 
