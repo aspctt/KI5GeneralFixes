@@ -1,6 +1,8 @@
 version=1
+id=3789366983
 title=KI5 General Fixes
 tags=Build 42;Multiplayer;Vehicles
+visibility=public
 description=[img]https://i.ibb.co/rK8yVgJz/Steam-Workshop-Description-Seperator.png[/img]
 description=
 description=Fixes faults KI5's vehicles share, at the engine level rather than one car at a time.
