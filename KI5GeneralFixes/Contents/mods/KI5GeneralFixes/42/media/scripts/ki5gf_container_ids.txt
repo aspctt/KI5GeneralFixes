@@ -1384,6 +1384,22 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item IMP95Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item IMP95Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item ISOTrunk1
 	{
 		ItemType = base:container,

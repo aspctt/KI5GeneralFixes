@@ -1,0 +1,14 @@
+# Container ids reported by players, for vehicles not installed on this machine.
+#
+# generate_container_ids.py can only see vehicle scripts that are actually here, so a
+# car nobody in the build environment owns is invisible to it. The mod's own audit
+# prints the exact container type when it meets one, which is where these come from:
+# they are the game's own strings, copied out of a report, not guesses.
+#
+# One id per line. Blank lines and # comments ignored. Delete an entry once the vehicle
+# is installed locally, since the scan will then find it on its own and a duplicate here
+# is just something else to keep current.
+
+# '95 Subaru Impreza WRX STI, reported 27.08.2026
+IMP95Trunk
+IMP95Roofrack

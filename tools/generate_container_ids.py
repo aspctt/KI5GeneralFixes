@@ -46,6 +46,13 @@ TARGET = os.path.join(ROOT, "KI5GeneralFixes", "Contents", "mods", "KI5GeneralFi
 
 MODULE = "KI5GF"
 
+# Ids that no local vehicle script declares, taken from player reports. The scan can
+# only see cars that are installed here, and the audit prints the exact container type
+# when it meets an uncovered one, so a report is the only way an id from a car nobody
+# here owns ever reaches this list.
+REPORTED = os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                        "reported-container-ids.txt")
+
 # zombie.inventory.ItemConfigurator.vehicle_containers, read out of the jar. These
 # are the only vehicle container names the engine registers on its own.
 VANILLA = (
@@ -174,6 +181,19 @@ def scan(roots):
     return parts, items
 
 
+def read_reported():
+    """Ids from player reports, one per line, # comments and blanks ignored."""
+    if not os.path.isfile(REPORTED):
+        return set()
+
+    found = set()
+    for line in io.open(REPORTED, encoding="utf-8"):
+        line = line.split("#", 1)[0].strip()
+        if line:
+            found.add(line)
+    return found
+
+
 def collisions(ids, items):
     """Ids that some other mod already declares an item under, by bare name.
 
@@ -185,9 +205,13 @@ def collisions(ids, items):
     """
     shadowed, ambiguous = [], []
     for name in sorted(ids):
-        modules = items.get(name)
+        # Our own module is not a competing declaration. Once the mod is published and
+        # subscribed, the scan reads the generated script straight back out of the Steam
+        # folder and every id looks like it collides with itself.
+        modules = set(items.get(name, ())) - {MODULE}
         if not modules:
             continue
+        modules = sorted(modules)
         if "Base" in modules:
             shadowed.append((name, sorted(modules)))
         else:
@@ -244,14 +268,28 @@ def main():
         print("scanning %s" % root)
 
     found, items = scan(roots)
-    missing = sorted(found - set(VANILLA))
+    reported = read_reported()
+
+    # An id that has since been installed locally no longer needs carrying by hand.
+    stale = sorted(reported & found)
+
+    missing = sorted((found | reported) - set(VANILLA))
     shadowed, ambiguous = collisions(missing, items)
 
     print("")
     print("container part ids found:  %d" % len(found))
     print("registered by the engine:  %d" % len(found & set(VANILLA)))
+    print("from player reports:       %d (%d not installed here)"
+          % (len(reported), len(reported - found)))
     print("needing registration here: %d" % len(missing))
     print("real item names seen:      %d" % len(items))
+
+    if stale:
+        print("")
+        print("reported ids now installed locally, safe to delete from %s:"
+              % os.path.basename(REPORTED))
+        for name in stale:
+            print("  %s" % name)
 
     if shadowed or ambiguous:
         print("")
