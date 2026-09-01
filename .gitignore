@@ -6,6 +6,10 @@
 # The runner is compiled from tests/harness/TestRunner.java on demand.
 tests/build/
 
+## Python bytecode from the generators
+__pycache__/
+*.pyc
+
 ## IDE / editor cruft
 .idea/
 .vscode/

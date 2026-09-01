@@ -16,6 +16,22 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item AE92Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item AE92Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item ARRWTrunk
 	{
 		ItemType = base:container,
@@ -625,6 +641,14 @@ module KI5GF
 	}
 
 	item COR84TrunkF
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item CUCV86Roofrack
 	{
 		ItemType = base:container,
 		Weight = 1.0,
@@ -2416,6 +2440,22 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item STAGEARoofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item STAGEATrunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item STP85Roofrack
 	{
 		ItemType = base:container,
@@ -2841,6 +2881,14 @@ module KI5GF
 	}
 
 	item Trunk2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item TrunkLeft
 	{
 		ItemType = base:container,
 		Weight = 1.0,

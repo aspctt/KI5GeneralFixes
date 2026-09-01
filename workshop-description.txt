@@ -1,6 +1,6 @@
 [img]https://i.ibb.co/rK8yVgJz/Steam-Workshop-Description-Seperator.png[/img]
 
-Fixes faults KI5's vehicles share, at the engine level rather than one car at a time.
+A collection of fixes for bugs affecting KI5's vehicles, from engine level gaps that hit every car to problems on one specific vehicle.
 
 [b]Build 42.20+. Singleplayer and multiplayer. Safe on an existing save. Load order does not matter.[/b]
 
@@ -9,11 +9,34 @@ I wrote this for my own game and a friend's server. It is published in case it i
 
 [img]https://i.ibb.co/xtVSd8Kn/Steam-Workshop-Contents-Seperator.png[/img]
 
-[b]Vehicle container ids.[/b] The engine only knows nine vehicle container names, hardcoded, and they are all vanilla's own. Every trunk, roofrack and seat a modded vehicle adds fails that lookup, and the game writes to two log files each time, once per container on every loot roll. That is the stutter when a car loads in.
+[b]What it fixes, in full:[/b]
 
-It also means no loot table can target those containers at all. This registers 371 of them. Nothing spawns or changes as a result.
+[list]
+[*][b]Stutter as a vehicle loads in[/b], and the [i]cannot get ID for container[/i] spam behind it. Affects every KI5 vehicle.
+[*][b]The '80 MAN KAT1 sinking into the ground[/b] and not coming back up. That vehicle only.
+[/list]
+
+That is the whole list. If a bug is not named above, this mod does not touch it. In particular it does [b]not[/b] fix missing wheels or other model problems, engine or fuel drain behaviour, or vanilla cars appearing where a KI5 one was expected. It adds no vehicles and replaces none.
+
+
+[b]Stutter as a vehicle loads in[/b]
+
+The engine only knows nine vehicle container names, hardcoded, and they are all vanilla's own. Every trunk, roofrack and seat a modded vehicle adds fails that lookup, and the game writes to two log files each time, once per container on every loot roll. That is the stutter, and the [i]cannot get ID for container[/i] lines in your console are the same thing.
+
+It also means no loot table can target those containers at all. This registers every one it can find, getting on for four hundred. Nothing spawns or changes as a result.
 
 An engine gap rather than a KI5 one, so it covers any vehicle mod that hits it.
+
+If you see [i]KI5 General Fixes: vehicle container 'X' is not registered[/i], that is a car I do not own, so its ids were never collected. Post the message and I can add it.
+
+
+[b]'80 MAN KAT1 sinking into the ground[/b]
+
+Loaded, the truck bottoms out its suspension, drops through the terrain and has no travel left to climb back out, so it stays sunk. This raises the suspension travel, which is what lets it come back up, along with the rest length, stiffness and damping so the extra travel does not just turn into a bounce.
+
+Credit for the numbers goes to a player who worked them out by driving it from Ekron to West Point fully loaded. They make the truck usable, not correct: wheel size and spacing are still off and only KI5 can fix those.
+
+Nothing of KI5's is edited or replaced. The change is applied to the script the game has already loaded, and it stands down on its own if KI5 ever touches the suspension themselves.
 
 
 [img]https://i.ibb.co/2wC3Ykd/Steam-Workshop-Compatibility-Seperator.png[/img]

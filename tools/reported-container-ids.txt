@@ -12,3 +12,16 @@
 # '95 Subaru Impreza WRX STI, reported 27.08.2026
 IMP95Trunk
 IMP95Roofrack
+
+# '98 Nissan Stagea 260RS Autech, reported 27.08.2026
+STAGEATrunk
+STAGEARoofrack
+
+# '87 Toyota Corolla AE92, reported 27.08.2026
+AE92Trunk
+AE92Roofrack
+
+# Vehicle unidentified, reported 27.08.2026 against the '76 Chevrolet K Series, but that
+# mod prefixes every part CH76, so it is some other car. Kept regardless: the audit
+# prints the container type the game actually met, so the id is real whoever owns it.
+TrunkLeft

@@ -372,7 +372,72 @@ local function ParseModItems()
 	return Items
 end
 
+--// Vehicle Scripts
+-- The parsed script the game holds, not a spawned vehicle. Load merges a partial
+-- definition into it, which is the only way to change another mod's vehicle without
+-- editing or shipping their files. Only the values a fix reads back are modelled.
+Harness.VehicleScripts = {}
+
+function Harness.NewVehicleScriptDefinition(Name, Values)
+	Values = Values or {}
+	local Script = {}
+
+	Script.Name = Name
+	Script.Loaded = {}
+	Script.Suspension = {
+		Stiffness = Values.Stiffness or 41,
+		Damping = Values.Damping or 3.88,
+		Compression = Values.Compression or 4.83,
+		RestLength = Values.RestLength or 0.15,
+		Travel = Values.Travel or 14
+	}
+
+	function Script:getName() return self.Name end
+	function Script:getSuspensionStiffness() return self.Suspension.Stiffness end
+	function Script:getSuspensionDamping() return self.Suspension.Damping end
+	function Script:getSuspensionCompression() return self.Suspension.Compression end
+	function Script:getSuspensionRestLength() return self.Suspension.RestLength end
+	function Script:getSuspensionTravel() return self.Suspension.Travel end
+
+	-- The real one parses the body and applies each key it recognises. Recorded rather
+	-- than reimplemented, plus the handful of keys a spec asserts on, so a patch that
+	-- writes a key the game does not read still shows up as a recorded but unapplied
+	-- value rather than passing silently.
+	function Script:Load(LoadName, Body)
+		if Harness.VehicleScriptLoadFails then error("script parse failed", 0) end
+		table.insert(self.Loaded, { Name = LoadName, Body = Body })
+
+		local Keys = {
+			suspensionStiffness = "Stiffness",
+			suspensionDamping = "Damping",
+			suspensionCompression = "Compression",
+			suspensionRestLength = "RestLength",
+			maxSuspensionTravelCm = "Travel"
+		}
+		for Key, Field in pairs(Keys) do
+			local Found = string.match(Body, Key .. "%s*=%s*([%d%.]+)")
+			if Found then self.Suspension[Field] = tonumber(Found) end
+		end
+	end
+
+	Harness.VehicleScripts[Name] = Script
+	return Script
+end
+
+function Harness.ClearVehicleScripts()
+	Harness.VehicleScripts = {}
+end
+
+-- Seeded before any mod file loads, with the values the vehicle ships today. A patch
+-- applied at file scope has already run by the time a spec could create this, which is
+-- the same reason the mod list is seeded up front.
+Harness.NewVehicleScriptDefinition("80manKat1")
+
 local ScriptManagerStub = {}
+
+function ScriptManagerStub:getVehicle(Name)
+	return Harness.VehicleScripts[Name]
+end
 
 function ScriptManagerStub:getItem(FullType)
 	ModItems = ModItems or ParseModItems()
@@ -394,6 +459,11 @@ end
 function getScriptManager()
 	return ScriptManagerStub
 end
+
+-- Mod code reaches the parsed scripts through the static, not through getScriptManager,
+-- which is what KI5 Mini-fixes does and what the vehicle patches here follow.
+ScriptManager = ScriptManager or {}
+ScriptManager.instance = ScriptManagerStub
 
 --// Console
 -- print is Kahlua's own and writes to the runner's output, which a spec cannot read
