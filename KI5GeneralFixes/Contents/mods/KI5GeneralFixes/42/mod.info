@@ -1,7 +1,7 @@
 id=KI5GeneralFixes
 name=KI5 General Fixes
 modversion=1.0.2
-description=Registers the vehicle container ids build 42 never does, stopping the stutter as a KI5 car streams into range.<LINE><LINE>Requires that DAMN Library. Load order does not matter.<LINE><LINE>Written for my own game, published as is.
+description=Fixes for KI5's vehicles.<LINE><LINE>Registers the container ids build 42 never does, stopping the stutter as a car streams into range. Stops the '80 MAN KAT1 sinking into the ground.<LINE><LINE>Requires that DAMN Library. Load order does not matter.<LINE><LINE>Written for my own game, published as is.
 icon=icon.png
 poster=poster.png
 require=damnlib
