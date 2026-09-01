@@ -25,3 +25,11 @@ AE92Roofrack
 # mod prefixes every part CH76, so it is some other car. Kept regardless: the audit
 # prints the container type the game actually met, so the id is real whoever owns it.
 TrunkLeft
+
+# Motorcycle panniers and holsters, vehicle unidentified, reported 01.09.2026. The ATA
+# prefix is nobody's in this load order, so this is a vehicle mod outside KI5's range
+# entirely, which is the fix working as intended: the gap is the engine's, not KI5's.
+ATABagMotoLeft
+ATABagMotoRight
+ATABagMotoHolsterLeft
+ATABagMotoHolsterRight

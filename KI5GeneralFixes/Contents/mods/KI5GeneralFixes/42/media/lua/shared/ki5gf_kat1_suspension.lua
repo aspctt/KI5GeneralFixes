@@ -26,29 +26,49 @@ KI5GF = KI5GF or {}
 
 local SCRIPT = "80manKat1"
 
--- What the vehicle ships with today. If any of it has moved, KI5 has been at the
--- suspension and this stands down rather than overwriting their work.
+--// Model scale
+-- VehicleScript.Loaded() runs once after the initial parse and multiplies a handful of
+-- fields by the model's scale, maxSuspensionTravelCm and suspensionRestLength among
+-- them. The KAT1's model is 0.9, so the 14 and 0.15 written in KI5's script are held as
+-- 12.6 and 0.135. That is also why the player who worked these numbers out reported the
+-- script as saying 12: they were reading the scaled value.
+--
+-- Load() does not re-run Loaded(), and it must not, because it would scale the extents,
+-- the chassis shape and the centre of mass a second time. So everything here works in
+-- the scaled space: what is compared against, and what is written.
+--
+-- Stiffness, damping and compression are not scaled by Loaded(), so those stay raw.
+
+-- As KI5 writes them, before scaling.
 local SHIPPED = {
 	Stiffness = 41,
 	Damping = 3.88,
 	Compression = 4.83,
-	RestLength = 0.15
+	RestLength = 0.15,
+	Travel = 14
 }
 
--- suspensionCompression is deliberately absent: it is already 4.83 and the patch has no
--- reason to restate it.
-local PATCH = [[{
-	suspensionStiffness = 100,
-	suspensionDamping = 4.88,
-	maxSuspensionTravelCm = 20,
-	suspensionRestLength = 0.5,
-}]]
+-- What this sets, before scaling. suspensionCompression is deliberately absent: it is
+-- already 4.83 and the patch has no reason to restate it.
+local TARGET = {
+	Stiffness = 100,
+	Damping = 4.88,
+	RestLength = 0.5,
+	Travel = 20
+}
 
 -- Floats out of the jar will not compare exactly against a literal written here.
 local function Near(Value, Expected)
 	local Difference = Value - Expected
 	if Difference < 0 then Difference = -Difference end
 	return Difference < 0.005
+end
+
+local function Matches(Script, Values, Scale)
+	return Near(Script:getSuspensionStiffness(), Values.Stiffness)
+		and Near(Script:getSuspensionDamping(), Values.Damping)
+		and Near(Script:getSuspensionRestLength(), Values.RestLength * Scale)
+		and Near(Script:getSuspensionTravel(), Values.Travel * Scale)
 end
 
 local function Apply()
@@ -58,18 +78,31 @@ local function Apply()
 	local Script = ScriptManager.instance:getVehicle(SCRIPT)
 	if not Script then return end
 
-	if not (Near(Script:getSuspensionStiffness(), SHIPPED.Stiffness)
-		and Near(Script:getSuspensionDamping(), SHIPPED.Damping)
-		and Near(Script:getSuspensionCompression(), SHIPPED.Compression)
-		and Near(Script:getSuspensionRestLength(), SHIPPED.RestLength)) then
-		print("KI5 General Fixes: the MAN KAT1 suspension has changed upstream, "
-			.. "leaving it alone. The sinking fix can probably be dropped.")
+	local Scale = Script:getModelScale()
+	if not Scale or Scale <= 0 then return end
+
+	-- Already done, on an earlier pass of this same file. The shared tree loads once for
+	-- the server context and again for the client on a hosted game, so this runs twice.
+	if Matches(Script, TARGET, Scale) then return end
+
+	if not (Matches(Script, SHIPPED, Scale)
+		and Near(Script:getSuspensionCompression(), SHIPPED.Compression)) then
+		print("KI5 General Fixes: the MAN KAT1 suspension is neither what the vehicle "
+			.. "ships nor what this sets, so something else has changed it. Leaving it alone.")
 		return
 	end
 
+	-- Written already scaled, because Loaded() has been and gone and will not run again.
+	local Patch = string.format([[{
+		suspensionStiffness = %s,
+		suspensionDamping = %s,
+		maxSuspensionTravelCm = %s,
+		suspensionRestLength = %s,
+	}]], TARGET.Stiffness, TARGET.Damping, TARGET.Travel * Scale, TARGET.RestLength * Scale)
+
 	-- Load is declared to throw, and a script that fails to parse should not take the
 	-- rest of the mod's load with it.
-	local Ok, Err = pcall(function() Script:Load(SCRIPT, PATCH) end)
+	local Ok, Err = pcall(function() Script:Load(SCRIPT, Patch) end)
 	if not Ok then
 		print("KI5 General Fixes: could not patch the MAN KAT1 suspension: " .. tostring(Err))
 	end

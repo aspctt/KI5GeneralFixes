@@ -384,15 +384,24 @@ function Harness.NewVehicleScriptDefinition(Name, Values)
 
 	Script.Name = Name
 	Script.Loaded = {}
+
+	-- VehicleScript.Loaded() runs once after the initial parse and multiplies travel and
+	-- rest length by the model scale, so what the game holds is not what the script says.
+	-- Modelled here, because a stub that skips it lets a fix compare against the raw
+	-- numbers and pass, which is exactly the mistake that shipped: the real guard missed
+	-- by 0.015 and stood down on every load.
+	Script.Scale = Values.Scale or 0.9
+
 	Script.Suspension = {
 		Stiffness = Values.Stiffness or 41,
 		Damping = Values.Damping or 3.88,
 		Compression = Values.Compression or 4.83,
-		RestLength = Values.RestLength or 0.15,
-		Travel = Values.Travel or 14
+		RestLength = (Values.RestLength or 0.15) * Script.Scale,
+		Travel = (Values.Travel or 14) * Script.Scale
 	}
 
 	function Script:getName() return self.Name end
+	function Script:getModelScale() return self.Scale end
 	function Script:getSuspensionStiffness() return self.Suspension.Stiffness end
 	function Script:getSuspensionDamping() return self.Suspension.Damping end
 	function Script:getSuspensionCompression() return self.Suspension.Compression end
@@ -403,6 +412,10 @@ function Harness.NewVehicleScriptDefinition(Name, Values)
 	-- than reimplemented, plus the handful of keys a spec asserts on, so a patch that
 	-- writes a key the game does not read still shows up as a recorded but unapplied
 	-- value rather than passing silently.
+	--
+	-- Values land raw. Load does not re-run Loaded(), and must not, since that would
+	-- scale the extents and chassis shape a second time. So a caller writing a field
+	-- Loaded() scaled has to pre-scale it themselves.
 	function Script:Load(LoadName, Body)
 		if Harness.VehicleScriptLoadFails then error("script parse failed", 0) end
 		table.insert(self.Loaded, { Name = LoadName, Body = Body })

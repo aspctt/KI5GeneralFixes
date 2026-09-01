@@ -9,11 +9,34 @@ Test("the shipped suspension is patched as the file loads", function()
 	local Patched = getScriptManager():getVehicle(SCRIPT)
 	AssertNotNil(Patched, "the harness seeds this script before any mod file loads")
 
-	-- Travel is the one that actually lets it climb back out of the ground.
-	AssertEquals(Patched:getSuspensionTravel(), 20, "maxSuspensionTravelCm was not raised")
+	-- Loaded() scales travel and rest length by the model scale, 0.9 on this vehicle, and
+	-- Load does not re-run it. So the patch has to write pre-scaled values, and what the
+	-- game ends up holding is 20 * 0.9 and 0.5 * 0.9. Comparing against the raw 20 and 0.5
+	-- is the mistake that shipped.
+	local Scale = Patched:getModelScale()
+	AssertNear(Scale, 0.9, 0.0001, "the KAT1 model scale")
+
+	AssertNear(Patched:getSuspensionTravel(), 20 * Scale, 0.0001,
+		"maxSuspensionTravelCm was not raised, or was written unscaled")
+	AssertNear(Patched:getSuspensionRestLength(), 0.5 * Scale, 0.0001,
+		"suspensionRestLength was not raised, or was written unscaled")
+
+	-- Not scaled by Loaded(), so these go in raw.
 	AssertEquals(Patched:getSuspensionStiffness(), 100, "stiffness was not raised")
 	AssertEquals(Patched:getSuspensionDamping(), 4.88, "damping was not raised")
-	AssertNear(Patched:getSuspensionRestLength(), 0.5, 0.0001, "rest length was not raised")
+end)
+
+Test("it matches what the standalone MAN KAT1 Suspension Fix produces", function()
+	-- That mod ships a whole replacement 80manKat1.txt with these four values, and the
+	-- game scales two of them on parse. Landing anywhere else means this does not
+	-- actually reproduce the fix people report as working.
+	local Patched = getScriptManager():getVehicle(SCRIPT)
+	local Scale = Patched:getModelScale()
+
+	AssertNear(Patched:getSuspensionTravel(), 18, 0.0001, "20 in the script, scaled")
+	AssertNear(Patched:getSuspensionRestLength(), 0.45, 0.0001, "0.5f in the script, scaled")
+	AssertEquals(Patched:getSuspensionStiffness(), 100, "100 in the script, unscaled")
+	AssertEquals(Patched:getSuspensionDamping(), 4.88, "4.88 in the script, unscaled")
 end)
 
 Test("compression is left at what the vehicle already ships", function()
@@ -40,6 +63,24 @@ Test("it stands down when the vehicle is not installed", function()
 	AssertNil(Harness.FindPrinted("MAN KAT1"), "an absent vehicle is not worth a word")
 end)
 
+Test("running twice is silent and changes nothing further", function()
+	-- The shared tree loads once for the server context and again for the client on a
+	-- hosted game, so this file runs twice against the same ScriptManager. The first
+	-- version of the guard read its own work as an upstream change and said so on every
+	-- server start, which is what a player reported.
+	local Script = Harness.VehicleScripts[SCRIPT]
+	local Before = #Script.Loaded
+
+	KI5GF.ApplyKat1Suspension()
+
+	AssertEquals(#Script.Loaded, Before, "the second pass should not patch again")
+	AssertNil(Harness.FindPrinted("something else has changed it"),
+		"recognising its own work is the whole point")
+	AssertNil(Harness.FindPrinted("changed upstream"), "no upstream change has happened")
+	AssertNear(Script:getSuspensionTravel(), 20 * Script:getModelScale(), 0.0001,
+		"the patched values must survive")
+end)
+
 Test("it stands down when KI5 has changed the suspension upstream", function()
 	Harness.ClearVehicleScripts()
 	local Changed = Harness.NewVehicleScriptDefinition(SCRIPT, { Stiffness = 60 })
@@ -48,7 +89,7 @@ Test("it stands down when KI5 has changed the suspension upstream", function()
 
 	AssertEquals(#Changed.Loaded, 0, "an upstream fix must not be overwritten")
 	AssertEquals(Changed:getSuspensionStiffness(), 60, "the upstream value should survive")
-	AssertNotNil(Harness.FindPrinted("changed upstream"),
+	AssertNotNil(Harness.FindPrinted("something else has changed it"),
 		"standing down silently would leave the author unaware the patch is stale")
 end)
 

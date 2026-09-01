@@ -120,6 +120,38 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item ATABagMotoHolsterLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item ATABagMotoHolsterRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item ATABagMotoLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item ATABagMotoRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item B700Roofrack
 	{
 		ItemType = base:container,
