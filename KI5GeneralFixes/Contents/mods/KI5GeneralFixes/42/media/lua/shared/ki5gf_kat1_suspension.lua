@@ -22,6 +22,13 @@
 -- and the Mini's enter offset. Nothing of KI5's is edited or shipped: the change is
 -- applied to the script the game already loaded, in memory, every load.
 
+--// When
+-- On OnInitGlobalModData rather than at file scope, because this is a sandbox setting
+-- and SandboxVars does not exist while lua is still loading: there is no world yet.
+-- That event fires during IsoWorld.init, after the sandbox is populated and well before
+-- any chunk streams a vehicle in, so the script is patched before the first KAT1 has
+-- its physics built. It is where QoLCompendium reads its own sandbox values too.
+
 KI5GF = KI5GF or {}
 
 local SCRIPT = "80manKat1"
@@ -71,7 +78,21 @@ local function Matches(Script, Values, Scale)
 		and Near(Script:getSuspensionTravel(), Values.Travel * Scale)
 end
 
+-- Off unless a host asks for it. This changes how a vehicle handles, on numbers that are
+-- one player's tuning rather than anything derived, so it is not something to do to
+-- someone's game uninvited.
+--
+-- An absent SandboxVars means the option was never reached, on a save older than this
+-- setting or in a context with no world. That falls back to off as well, so the shipped
+-- default and the fallback agree and nobody gets the change without choosing it.
+local function Enabled()
+	local Options = SandboxVars and SandboxVars.KI5GF
+	if not Options then return false end
+	return Options.FixKat1Suspension == true
+end
+
 local function Apply()
+	if not Enabled() then return end
 	if not ScriptManager or not ScriptManager.instance then return end
 
 	-- Absent when the vehicle is not installed, which is most people.
@@ -108,10 +129,8 @@ local function Apply()
 	end
 end
 
--- Runs once as this file loads, which is after the game has parsed every script and
--- before any vehicle exists. Exposed as well, because a decision made at file scope has
--- already been taken by the time a spec could set anything up, and the stand-down path
--- is worth proving rather than assuming.
+-- Exposed so a spec can drive every path, including the ones the event only reaches
+-- once per world load.
 KI5GF.ApplyKat1Suspension = Apply
 
-Apply()
+Events.OnInitGlobalModData.Add(Apply)

@@ -1,0 +1,29 @@
+VERSION = 1,
+
+/*
+ * Server controlled settings for KI5 General Fixes.
+ *
+ * The container id registration is not here and will not be. It stops the game writing
+ * a failed lookup to two log files on every roll, changes nothing a player can see, and
+ * there is no reason anyone would want it off.
+ *
+ * The MAN KAT1 suspension is different. It changes how a vehicle handles, using numbers
+ * a player arrived at by driving rather than anything derived, so it is a judgement a
+ * host should be able to overrule. It belongs to the server rather than the client
+ * because two people on the same server driving the same truck to different physics
+ * would be worse than either setting.
+ *
+ * Off by default, deliberately. Nobody installing a fix mod expects a vehicle's handling
+ * quietly altered underneath them, and these numbers are one player's tuning rather than
+ * anything derived. Whoever wants it can ask for it.
+ *
+ * Read from lua as SandboxVars.KI5GF.<name>. Labels live in
+ * 42/media/lua/shared/Translate/EN/Sandbox.json, keyed Sandbox_<translation>.
+ */
+
+option KI5GF.FixKat1Suspension
+{
+    type = boolean, default = false,
+    page = KI5GF,
+    translation = KI5GF_FixKat1Suspension,
+}
