@@ -50,6 +50,11 @@ V300Crates
 Browning_M2
 SeatGunner
 
+# Vehicle unidentified, reported 10.09.2026.
+SeatSideLeft1
+SeatSideRight1
+Gunner
+
 # '62 Daimler Ferret. FER62Trunk reported 07.09.2026, the rest from Specific Loot (KI5).
 FER62Trunk
 FER62Roofrack

@@ -1576,6 +1576,14 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item Gunner
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item HLX88Roofrack
 	{
 		ItemType = base:container,
@@ -3017,6 +3025,22 @@ module KI5GF
 	}
 
 	item SeatRearR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item SeatSideLeft1
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item SeatSideRight1
 	{
 		ItemType = base:container,
 		Weight = 1.0,
