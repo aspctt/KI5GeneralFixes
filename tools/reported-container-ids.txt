@@ -5,6 +5,11 @@
 # prints the exact container type when it meets one, which is where these come from:
 # they are the game's own strings, copied out of a report, not guesses.
 #
+# A second source, marked where used: the loot tables in Specific Loot (KI5). Those key
+# each container by the part id the game looks the loot up under, so they only work if
+# the id is the real one. Less direct than a report, but an id that turned out wrong
+# would only register a hidden item nothing uses.
+#
 # One id per line. Blank lines and # comments ignored. Delete an entry once the vehicle
 # is installed locally, since the scan will then find it on its own and a duplicate here
 # is just something else to keep current.
@@ -33,3 +38,51 @@ ATABagMotoLeft
 ATABagMotoRight
 ATABagMotoHolsterLeft
 ATABagMotoHolsterRight
+
+# '84 Cadillac Gage V300, reported 09.09.2026. New with that DAMN Library 0.9872b.
+V300Trunk
+V300NettingLeft
+V300NettingRight
+V300Crates
+
+# Vehicle unidentified, reported 07.09.2026. The report was cut off, so there are likely
+# more from the same vehicle still to come.
+Browning_M2
+SeatGunner
+
+# '62 Daimler Ferret. FER62Trunk reported 07.09.2026, the rest from Specific Loot (KI5).
+FER62Trunk
+FER62Roofrack
+FER62SideStorage
+FER62SideStorageFL
+FER62SideStorageFR
+FER62SideStorageRL
+FER62SideStorageRR
+
+# '97 Bushmaster, from Specific Loot (KI5).
+BUSHAmmoCabinet
+BUSHFenderLeft
+BUSHFenderRight
+BUSHFloor
+BUSHMedicCabinet
+BUSHRoofCrates
+BUSHStorageLeft
+BUSHStorageRight
+SeatDriver
+SeatStretcher
+SeatSupport
+
+# '99 Ford Crown Victoria Police Interceptor, from Specific Loot (KI5).
+CVPI99Trunk
+
+# '96 Mitsubishi Lancer Evolution IV, from Specific Loot (KI5).
+EVO4Trunk
+EVO4Roofrack
+
+# '96 Saturn S-Series, from Specific Loot (KI5).
+SAT96Trunk
+SAT96Roofrack
+
+# '04 Volkswagen Touran, from Specific Loot (KI5).
+TOU04Trunk
+TOU04Roofrack

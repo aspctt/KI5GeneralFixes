@@ -23,7 +23,7 @@ That is the whole list. If a bug is not named above, this mod does not touch it.
 
 The engine only knows nine vehicle container names, hardcoded, and they are all vanilla's own. Every trunk, roofrack and seat a modded vehicle adds fails that lookup, and the game writes to two log files each time, once per container on every loot roll. That is the stutter, and the [i]cannot get ID for container[/i] lines in your console are the same thing.
 
-It also means no loot table can target those containers at all. This registers every one it can find, getting on for four hundred. Nothing spawns or changes as a result.
+It also means no loot table can target those containers at all. This registers every one it can find, over four hundred. Nothing spawns or changes as a result.
 
 An engine gap rather than a KI5 one, so it covers any vehicle mod that hits it.
 

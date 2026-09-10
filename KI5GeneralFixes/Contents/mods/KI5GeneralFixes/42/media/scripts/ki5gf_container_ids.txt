@@ -288,6 +288,78 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item BUSHAmmoCabinet
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item BUSHFenderLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item BUSHFenderRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item BUSHFloor
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item BUSHMedicCabinet
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item BUSHRoofCrates
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item BUSHStorageLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item BUSHStorageRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item Browning_M2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item CAM69Roofrack
 	{
 		ItemType = base:container,
@@ -720,6 +792,14 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item CVPI99Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item DAMNBackLeftArmor
 	{
 		ItemType = base:container,
@@ -992,6 +1072,22 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item EVO4Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item EVO4Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item F1502Roofrack
 	{
 		ItemType = base:container,
@@ -1225,6 +1321,62 @@ module KI5GF
 	}
 
 	item F700TrunkSWGunrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item FER62Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item FER62SideStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item FER62SideStorageFL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item FER62SideStorageFR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item FER62SideStorageRL
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item FER62SideStorageRR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item FER62Trunk
 	{
 		ItemType = base:container,
 		Weight = 1.0,
@@ -2400,6 +2552,22 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item SAT96Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item SAT96Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item SIL93Toolbox
 	{
 		ItemType = base:container,
@@ -2672,6 +2840,14 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item SeatDriver
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item SeatFrontL
 	{
 		ItemType = base:container,
@@ -2689,6 +2865,14 @@ module KI5GF
 	}
 
 	item SeatFrontR
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item SeatGunner
 	{
 		ItemType = base:container,
 		Weight = 1.0,
@@ -2840,6 +3024,22 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item SeatStretcher
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item SeatSupport
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item TAU93Roofrack
 	{
 		ItemType = base:container,
@@ -2857,6 +3057,22 @@ module KI5GF
 	}
 
 	item TAU93TrunkW
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item TOU04Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item TOU04Trunk
 	{
 		ItemType = base:container,
 		Weight = 1.0,
@@ -2937,6 +3153,38 @@ module KI5GF
 	}
 
 	item V100Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item V300Crates
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item V300NettingLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item V300NettingRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item V300Trunk
 	{
 		ItemType = base:container,
 		Weight = 1.0,
