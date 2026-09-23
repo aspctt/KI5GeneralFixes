@@ -144,6 +144,31 @@ Test("a container the engine registers itself passes without a word", function()
 	AssertEquals(#KI5GF.MissingContainerIds, 0, "a vanilla container was reported as missing")
 end)
 
+Test("a part named after a world container passes without a word", function()
+	-- Reported as missing on 14.09.2026. Preprocess registers every tile's container type,
+	-- so these resolve, and the audit only asking the KI5GF module made them look broken.
+	local Parts = {}
+	for _, Id in ipairs({ "fridge", "counter", "freezer" }) do
+		table.insert(Parts, Harness.NewVehiclePart(Id, { Container = Harness.NewItemContainer(Id) }))
+	end
+	local Vehicle = Harness.NewVehicle("Base.99madeUpCamper", { Parts = Parts })
+
+	Harness.Fire("OnSpawnVehicleEnd", Vehicle)
+
+	AssertEquals(#KI5GF.MissingContainerIds, 0, "a tile container type was reported as missing")
+	AssertNil(Harness.FindPrinted("registration script holds"),
+		"nothing was missing, so the summary should not have printed either")
+end)
+
+Test("the registration script leaves world container types to the engine", function()
+	local Declared = {}
+	for _, Id in ipairs(DeclaredIds()) do Declared[Id] = true end
+
+	for _, Id in ipairs({ "fridge", "counter", "freezer", "crate", "microwave" }) do
+		AssertFalse(Declared[Id], Id .. " is registered from tile definitions already")
+	end
+end)
+
 Test("an uncovered container is named once, not once per vehicle", function()
 	local function NewCar()
 		local Part = Harness.NewVehiclePart("XX99Trunk",

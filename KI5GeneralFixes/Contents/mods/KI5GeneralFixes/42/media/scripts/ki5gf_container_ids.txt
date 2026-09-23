@@ -120,6 +120,14 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item ATA2InteractiveTrunkRoofRack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item ATABagMotoHolsterLeft
 	{
 		ItemType = base:container,
@@ -145,6 +153,14 @@ module KI5GF
 	}
 
 	item ATABagMotoRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item AmmoStor
 	{
 		ItemType = base:container,
 		Weight = 1.0,
@@ -648,6 +664,14 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item CHE70RoofrackNomad
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item CHE70SmugglersBox
 	{
 		ItemType = base:container,
@@ -817,6 +841,14 @@ module KI5GF
 	}
 
 	item DAMNBedOne
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item DAMNBedThree
 	{
 		ItemType = base:container,
 		Weight = 1.0,
@@ -1760,6 +1792,22 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item KI5CRToolboxLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item KI5CRToolboxRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item KI5TRCLTrunk
 	{
 		ItemType = base:container,
@@ -2081,6 +2129,22 @@ module KI5GF
 	}
 
 	item M129Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item M1919A4_Coax
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item M1_76mm
 	{
 		ItemType = base:container,
 		Weight = 1.0,
@@ -3064,6 +3128,14 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item SemiTrailerRoofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item TAU93Roofrack
 	{
 		ItemType = base:container,
@@ -3097,6 +3169,30 @@ module KI5GF
 	}
 
 	item TOU04Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item TankRoof
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item TireFrontLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item TireFrontRight
 	{
 		ItemType = base:container,
 		Weight = 1.0,
@@ -3144,6 +3240,30 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item TruckBedContainer_1
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item TruckBedContainer_2
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item TruckBedContainer_3
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item TruckBedSeat
 	{
 		ItemType = base:container,
@@ -3161,6 +3281,14 @@ module KI5GF
 	}
 
 	item TrunkLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item TrunkToolbox
 	{
 		ItemType = base:container,
 		Weight = 1.0,
@@ -3329,6 +3457,14 @@ module KI5GF
 	}
 
 	item W460Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item portablemicrowave
 	{
 		ItemType = base:container,
 		Weight = 1.0,

@@ -55,6 +55,26 @@ SeatSideLeft1
 SeatSideRight1
 Gunner
 
+# Sherman tank, reported 12.09.2026.
+M1_76mm
+M1919A4_Coax
+AmmoStor
+TankRoof
+
+# Vehicle unidentified, reported 14.09.2026. The same report also named fridge and
+# counter, which are left out: both are tile container types the engine registers on
+# its own, and the audit now knows to skip them.
+ATA2InteractiveTrunkRoofRack
+SemiTrailerRoofrack
+TrunkToolbox
+portablemicrowave
+
+# W900 Semi-Truck (Workshop 3409472393), reported 16.09.2026. The reporter only saw
+# these three spawn, so the mod likely has more.
+TruckBedContainer_1
+TruckBedContainer_2
+TruckBedContainer_3
+
 # '62 Daimler Ferret. FER62Trunk reported 07.09.2026, the rest from Specific Loot (KI5).
 FER62Trunk
 FER62Roofrack

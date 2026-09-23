@@ -40,6 +40,30 @@ local VANILLA = {
 	SeatRearLeft = true, SeatRearRight = true
 }
 
+-- Every container type a world tile carries, which Preprocess also registers on its own
+-- from each sprite's container property, plus the literal "freezer" it adds by hand.
+-- Read out of the game's .tiles files on 42.20.4. A vehicle mod naming a part after
+-- furniture resolves fine, but the audit only asks the KI5GF module, so without this it
+-- reports those as missing. Reported that way 14.09.2026 for "fridge" and "counter".
+local WORLD = {}
+for _, Name in ipairs({
+	"barbecue", "barbecuepropane", "bin", "brazier", "campfire", "cardboardbox",
+	"cashregister", "clothingdryer", "clothingdryerbasic", "clothingrack",
+	"clothingwasher", "coffin", "composter", "counter", "crate", "desk",
+	"dishescabinet", "dishwasher", "displaycase", "displaycasebakery",
+	"displaycasebutcher", "doghouse", "dresser", "dumpster", "filingcabinet",
+	"fireplace", "freezer", "fridge", "fruitbusha", "fruitbushb", "fruitbushc",
+	"fruitbushd", "fruitbushe", "grocerstand", "locker", "logs", "medicine",
+	"metal_shelves", "microwave", "militarycrate", "militarylocker",
+	"newspaper_dispatch", "newspaper_herald", "newspaper_knews", "newspaper_times",
+	"overhead", "plankstash", "postbox", "restaurantdisplay", "shelter", "shelves",
+	"shelvesmag", "sidetable", "smallbox", "smallcrate", "stonefurnace", "stove",
+	"tent", "toolcabinet", "trough", "vendingpop", "vendingsnack", "wardrobe",
+	"woodstove"
+}) do
+	WORLD[Name] = true
+end
+
 -- The module the generated script declares its items in. Asking the script manager
 -- whether an item exists is how the audit knows what is covered, so the generated file
 -- stays the only list and nothing here has to be kept in step with it.
@@ -86,7 +110,7 @@ end
 
 local function Examine(Type)
 	if Type == nil or Type == "" then return end
-	if VANILLA[Type] then return end
+	if VANILLA[Type] or WORLD[Type] then return end
 	if Examined[Type] then return end
 	Examined[Type] = true
 
