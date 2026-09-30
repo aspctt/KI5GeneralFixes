@@ -240,6 +240,22 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item BCQuadFrontRack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item BCQuadRearRack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item BMWE30Roofrack
 	{
 		ItemType = base:container,
@@ -2561,6 +2577,38 @@ module KI5GF
 	}
 
 	item R32Trunk
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item RE9CaseFrontLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item RE9CaseFrontRight
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item RE9CaseRearLeft
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item RE9CaseRearRight
 	{
 		ItemType = base:container,
 		Weight = 1.0,

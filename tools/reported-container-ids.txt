@@ -75,6 +75,16 @@ TruckBedContainer_1
 TruckBedContainer_2
 TruckBedContainer_3
 
+# EmreRE9Motorcycle, reported 27.09.2026. Named by the reporter, not found on the Workshop.
+RE9CaseFrontLeft
+RE9CaseFrontRight
+RE9CaseRearLeft
+RE9CaseRearRight
+
+# BackcountryATV, reported 27.09.2026 as two missing ids, named 29.09.2026.
+BCQuadFrontRack
+BCQuadRearRack
+
 # '62 Daimler Ferret. FER62Trunk reported 07.09.2026, the rest from Specific Loot (KI5).
 FER62Trunk
 FER62Roofrack
