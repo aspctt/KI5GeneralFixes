@@ -74,3 +74,6 @@ description=
 description=All Rights Reserved. If you are an author and want your work out of this, say so and it goes.
 description=
 description="Project Zomboid" is a trademark of The Indie Stone. This project is not associated with nor endorsed by The Indie Stone.
+description=
+description=[url=https://buymeacoffee.com/aspctt][img]https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/donate/buymeacoffee-singular_vector.svg[/img][/url]
+description=

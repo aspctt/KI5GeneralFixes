@@ -53,7 +53,11 @@ def parse_header(text):
 
 def build(description, header):
     lines = ["%s=%s" % (key, header[key]) for key in HEADER_KEYS if key in header]
-    for line in description.rstrip("\n").split("\n"):
+    # Only the file's own final newline is dropped. A blank line written after the last
+    # paragraph is deliberate and becomes a trailing empty "description=" line.
+    if description.endswith("\n"):
+        description = description[:-1]
+    for line in description.split("\n"):
         lines.append("description=" + line)
     return "\n".join(lines) + "\n"
 
