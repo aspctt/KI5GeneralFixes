@@ -688,6 +688,14 @@ module KI5GF
 		Hidden = true,
 	}
 
+	item CHE70SideStorage
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
 	item CHE70SmugglersBox
 	{
 		ItemType = base:container,
@@ -1537,6 +1545,30 @@ module KI5GF
 	}
 
 	item GM85Roofrack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item GMC83LeftRack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item GMC83RightRack
+	{
+		ItemType = base:container,
+		Weight = 1.0,
+		Capacity = 1,
+		Hidden = true,
+	}
+
+	item GMC83Trunk
 	{
 		ItemType = base:container,
 		Weight = 1.0,

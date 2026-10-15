@@ -85,6 +85,12 @@ RE9CaseRearRight
 BCQuadFrontRack
 BCQuadRearRack
 
+# '83 GMC G-Series Vans (Workshop 3799732653). GMC83Trunk reported 24.09.2026 on GitHub
+# issue 1, the racks from Specific Loot (KI5).
+GMC83Trunk
+GMC83LeftRack
+GMC83RightRack
+
 # '62 Daimler Ferret. FER62Trunk reported 07.09.2026, the rest from Specific Loot (KI5).
 FER62Trunk
 FER62Roofrack
